@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home_page_view(request):
-    return render(request, 'home.html')
+    return render(request, 'shared/home.html')
 
 def about_us_view(request):
     return render(request, 'about-us.html')
