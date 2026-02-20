@@ -21,12 +21,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blogs/', include('blogs.urls', namespace='blogs')),
+    path('products/', include('products.urls', namespace='products')),
     path('', include('shared.urls', namespace='shared')),
-
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-handler404 = 'shared.views.page_404_view'

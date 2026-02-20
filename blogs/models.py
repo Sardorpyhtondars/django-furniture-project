@@ -1,3 +1,36 @@
 from django.db import models
 
-# Create your models here.
+class BlogCategory(models.Model):
+    name = models.CharField(max_length=64)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'blog_category'
+
+class BlogTag(models.Model):
+    name = models.CharField(max_length=64)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'blog_tag'
+
+class Blog(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='blogs/')
+    description_short = models.CharField(max_length=255)
+    description_long = models.TextField()
+
+    category = models.ForeignKey('BlogCategory', on_delete=models.PROTECT, null=True, blank=True)
+    tags = models.ManyToManyField('BlogTag', blank=True)
+    comments_count = models.IntegerField(default=0)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'blog'
