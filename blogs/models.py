@@ -6,8 +6,13 @@ class BlogCategory(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'{self.id} | {self.name}'
+
     class Meta:
         db_table = 'blog_category'
+        verbose_name = 'Blog Category'
+        verbose_name_plural = 'Blog Categories'
 
 class BlogTag(models.Model):
     name = models.CharField(max_length=64)
@@ -15,8 +20,13 @@ class BlogTag(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'{self.id} | {self.name}'
+
     class Meta:
         db_table = 'blog_tag'
+        verbose_name = 'Blog Tag'
+        verbose_name_plural = 'Blog Tags'
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
@@ -32,5 +42,10 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'{self.id} | {self.title}'
+
     class Meta:
         db_table = 'blog'
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Blogs'
