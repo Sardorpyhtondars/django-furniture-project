@@ -1,10 +1,14 @@
 from django.shortcuts import render
+from about.models import TeamMember
 
 def home_page_view(request):
     return render(request, 'shared/home.html')
 
 def about_us_view(request):
-    return render(request, 'shared/about-us.html')
+    context = {
+        'team_members': TeamMember.objects.all(),
+    }
+    return render(request, 'shared/about-us.html', context)
 
 def account_view(request):
     return render(request, 'shared/account.html')
