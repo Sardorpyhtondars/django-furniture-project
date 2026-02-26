@@ -150,19 +150,19 @@
                             <div id="acount" class="collapse">
                                 <div class="account-list-content">
                                     <div>
-                                        <a class="login" href="account.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'users:account' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-cog"></i>
                                             <span>My Account</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="login" href="login.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'users:login' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-sign-in"></i>
                                             <span>Sign in</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="register" href="register.html" rel="nofollow" title="Register Account">
+                                        <a class="register" href="{% url 'users:register' %}" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
                                             <span>Register Account</span>
                                         </a>
@@ -271,4 +271,17 @@
                 </div>
             </div>
         </div>
-    </header>
+</header>
+
+{% if messages %}
+    <div id="alert-message" style="margin-top: 20px;" class="alert alert-info" role="alert">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('alert-message').style.display = 'none';
+        }, 7000);
+    </script>
+{% endif %}
