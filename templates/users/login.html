@@ -39,7 +39,7 @@
                     <div class="container">
                         <h1 class="text-center title-page">Log In</h1>
                         <div class="login-form">
-                            <form id="customer-form" action="#" method="post">
+                            <form id="customer-form" action="{% url 'users:login' %}" method="post">
                                 <div>
                                     <input type="hidden" name="back" value="my-account">
                                     <div class="form-group no-gutters">

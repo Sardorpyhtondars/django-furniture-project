@@ -1,49 +1,34 @@
 from django import forms
-from users.models import User
+from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.db.models import Q
 
-class RegisterForm(forms.ModelForm):
+User = get_user_model()
+
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ('email', 'full_name', 'username')
 
-    def clean_password(self):
+class CustomAuthenticationForm(forms.Form):
+    def __init__(self, request=None, *args, **kwargs):
+        self.request = request
+        super().__init__(*args, **kwargs)
+
+    identifier = forms.CharField(max_length=128)
+    password = forms.CharField(max_length=128)
+
+    def clean(self):
+        identifier = self.cleaned_data.get('identifier')
         password = self.cleaned_data.get('password')
-        if len(password) < 8:
-            raise forms.ValidationError('Password must be at least 8 characters.')
-        if len(password) > 16:
-            raise forms.ValidationError('Password must not exceed 16 characters.')
-        return password
+        try:
+            user = User.objects.get(Q(username=identifier) | Q(email=identifier))
+        except User.DoesNotExist:
+            raise forms.ValidationError("User not found, please check your credentials")
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError('This email is already registered.')
-        return email
+        user_in = authenticate(self.request, email=user.email, password=password)
+        if user_in is None:
+            raise forms.ValidationError("User not found, please check your credentials")
 
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        if User.objects.filter(username=username).exists():
-            raise forms.ValidationError('This username is already taken.')
-        return username
-
-class LoginForm(forms.Form):
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
-
-    class Meta:
-        model = User
-        fields = '__all__'
-
-    def clean_password(self):
-        password = self.cleaned_data.get('password')
-        if len(password) < 8:
-            raise forms.ValidationError('Password must be at least 8 characters.')
-        if len(password) > 16:
-            raise forms.ValidationError('Password must not exceed 16 characters.')
-        return password
-
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not User.objects.filter(email=email).exists():
-            raise forms.ValidationError('No such email address found in the database.')
-        return email
+        self.cleaned_data['user'] = user_in
+        return self.cleaned_data
