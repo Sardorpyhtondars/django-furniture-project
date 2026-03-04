@@ -1,4 +1,5 @@
 {% extends 'layout/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Users register{% endblock %}
@@ -17,12 +18,12 @@
                         <ol>
                             <li>
                                 <a href="#">
-                                    <span>Home</span>
+                                    <span>{% trans 'Home' %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <span>About us</span>
+                                    <span>{% trans 'About us' %}</span>
                                 </a>
                             </li>
                         </ol>
@@ -39,7 +40,7 @@
                         <div id="main">
                             <div id="content" class="page-content">
                                 <div class="register-form text-center">
-                                    <h1 class="text-center title-page">Create Account</h1>
+                                    <h1 class="text-center title-page">{% trans 'Create Account' %}</h1>
                                     <form action="{% url 'users:register' %}" id="customer-form" class="js-customer-form" method="post">
                                         {% csrf_token %}
                                         <div>
@@ -73,7 +74,7 @@
                                         </div>
                                         <div class="clearfix">
                                             <div>
-                                                <button class="btn btn-primary" data-link-action="sign-in" type="submit">
+                                                <button class="btn btn-primary" type="submit">{% trans 'Create Account' %}</button>
                                                     Create Account
                                                 </button>
                                             </div>

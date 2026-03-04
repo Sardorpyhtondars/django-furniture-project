@@ -1,4 +1,5 @@
 {% extends 'layout/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Shared about us{% endblock %}
@@ -19,12 +20,12 @@
                             <ol>
                                 <li>
                                     <a href="#">
-                                        <span>Home</span>
+                                        <span>{% trans 'Home' %}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span>About us</span>
+                                        <span>{% trans 'About us' %}</span>
                                     </a>
                                 </li>
                             </ol>
@@ -45,7 +46,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 left">
                                         <div class="cms-block f-right">
-                                            <h3 class="page-subheading">WHO WE ARE</h3>
+                                            <h3 class="page-subheading">{% trans 'WHO WE ARE' %}</h3>
                                             <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis biben
                                                 dum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
                                                 sed odio sit amet nibh vultate cursus a sit amet mauris. Duis sed odio sit
@@ -61,7 +62,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 right">
                                         <div class="cms-block f-left">
-                                            <h3 class="page-subheading">WHAT WE DO</h3>
+                                            <h3 class="page-subheading">{% trans 'WHAT WE DO' %}</h3>
                                             <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin, lorem quis biben
                                                 dum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
                                                 sed odio sit amet nibh vultate cursus a sit amet mauris. Duis sed odio sit
@@ -83,7 +84,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 left">
                                         <div class="cms-block f-right">
-                                            <h3 class="page-subheading no-before">MEET OUR TEAM</h3>
+                                            <h3 class="page-subheading no-before">{% trans 'MEET OUR TEAM' %}</h3>
                                             <div class="testimonials owl-carousel owl-theme owl-loaded owl-drag">
                                             {% for member in team_members %}
                                                 <div class="item">
@@ -92,7 +93,7 @@
                                                     <p>{{ member.info }}</p>
                                                 </div>
                                             {% empty %}
-                                                <p>No team members found.</p>
+                                                <p>{% trans 'No team members found.' %}</p>
                                             {% endfor %}
                                             </div>
                                             <div class="social-content">

@@ -1,7 +1,8 @@
 {% extends 'layout/base.html' %}
+{% load i18n %}
 {% load static %}
 
-{% block title %}Blog detail{% endblock %}
+{% block title %}{% trans 'Blog detail' %}{% endblock %}
 
 {% block id %}id="blog-detail"{% endblock %}
 {% block class %}class="blog"{% endblock %}

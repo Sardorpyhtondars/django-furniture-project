@@ -1,4 +1,5 @@
 {% extends 'layout/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Shared 404{% endblock %}
@@ -18,13 +19,13 @@
                             <div class="image">
                                 <img class="img-fluid" src="{% static 'assets/img/other/image-404.png' %}" alt="Image 404">
                             </div>
-                            <h2 class="h4">We're sorry — something has gone wrong on our end.</h2>
+                            <h2 class="h4">{% trans "We're sorry — something has gone wrong on our end." %}</h2>
                             <div class="info">
-                                <p>If difficulties persist, please contact the System Administrator of this site and report the error below.</p>
+                                <p>{% trans 'If difficulties persist, please contact the System Administrator of this site and report the error below.' %}</p>
                             </div>
                             <a class="btn btn-default" href="home.html">
                                 <i class="fa fa-home" aria-hidden="true"></i>
-                                <span>Back to homepage</span>
+                                <span>{% trans 'Back to homepage' %}</span>
                             </a>
                         </div>
 

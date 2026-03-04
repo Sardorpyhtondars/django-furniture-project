@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n my_tags %}
 <header>
         <!-- header left mobie -->
         <div class="header-mobile d-md-none">
@@ -143,7 +144,7 @@
                             <div class="myaccount-title ">
                                 <a href="#acount" data-toggle="collapse" class="acount">
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span>Account</span>
+                                    <span>{% trans 'Account' %}</span>
                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -152,31 +153,31 @@
                                     <div>
                                         <a class="login" href="{% url 'users:account' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-cog"></i>
-                                            <span>My Account</span>
+                                            <span>{% trans 'My Account' %}</span>
                                         </a>
                                     </div>
                                     <div>
                                         <a class="login" href="{% url 'users:login' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-sign-in"></i>
-                                            <span>Sign in</span>
+                                            <span>{% trans 'Sign in' %}</span>
                                         </a>
                                     </div>
                                     <div>
                                         <a class="register" href="{% url 'users:register' %}" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
-                                            <span>Register Account</span>
+                                            <span>{% trans 'Register Account' %}</span>
                                         </a>
                                     </div>
                                     <div>
                                         <a class="check-out" href="checkout.html" rel="nofollow" title="Checkout">
                                             <i class="fa fa-check" aria-hidden="true"></i>
-                                            <span>Checkout</span>
+                                            <span>{% trans 'Checkout' %}</span>
                                         </a>
                                     </div>
                                     <div class="link_wishlist">
                                         <a href="wishlist.html" title="My Wishlists">
                                             <i class="fa fa-heart"></i>
-                                            <span>My Wishlists</span>
+                                            <span>{% trans 'My Wishlists' %}</span>
                                         </a>
                                     </div>
                                     <div id="desktop_currency_selector" class="currency-selector groups-selector hidden-sm-down">
@@ -191,26 +192,18 @@
                                     </div>
                                     <div id="desktop_language_selector" class="language-selector groups-selector hidden-sm-down">
                                         <ul class="list-inline">
-                                            <li class="list-inline-itemcurrent">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas.jpg' %}" alt="English" width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas2.jpg' %}" alt="Italiano" width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas3.jpg' %}" alt="Français" width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="{% static 'img/home/home1-flas4.jpg' %}" alt="Español" width="16" height="11">
-                                                </a>
-                                            </li>
+                                            {% get_available_languages as all_lang %}
+                                            {% for lang in all_lang %}
+                                                {% with flag_path='img/flags/'|add:lang.0|add:'.jpg' %}
+                                                    <li class="list-inline-item">
+                                                        <a href="{{ request.scheme }}://{{ request.get_host }}{% get_full_path request.path lang.0.lower %}">
+                                                            <img class="img-fluid"
+                                                                 src="{% static flag_path %}"
+                                                                 alt="{{ lang.1 }}" width="16" height="11">
+                                                        </a>
+                                                    </li>
+                                                {% endwith %}
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
@@ -248,14 +241,14 @@
                                                     </td>
                                                 </tr>
                                                 <tr class="total">
-                                                    <td colspan="2">Total:</td>
+                                                    <td colspan="2">{% trans 'Total' %}:</td>
                                                     <td>£92.96</td>
                                                 </tr>
 
                                                 <tr>
                                                     <td colspan="3" class="d-flex justify-content-center">
                                                         <div class="cart-button">
-                                                            <a href="cart.html" title="View Cart">View Cart</a>
+                                                            <a href="cart.html" title="{% trans 'View Cart' %}">{% trans 'View Cart' %}</a>
                                                             <a href="checkout.html" title="Checkout">Checkout</a>
                                                         </div>
                                                     </td>
