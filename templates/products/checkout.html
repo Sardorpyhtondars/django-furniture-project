@@ -1,4 +1,5 @@
 {% extends 'layout/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Products checkout{% endblock %}
@@ -16,12 +17,12 @@
                         <ol>
                             <li>
                                 <a href="#">
-                                    <span>Home</span>
+                                    <span>{% trans 'Home' %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <span>Checkout</span>
+                                    <span>{% trans 'Checkout' %}</span>
                                 </a>
                             </li>
                         </ol>
@@ -70,10 +71,10 @@
                                                                 <input class="form-control" name="email" type="email" placeholder="Phone">
                                                             </div>
                                                             <div class="desc-password">
-                                                                <span class="font-weight-bold">Create an account</span>
+                                                                <span class="font-weight-bold">{% trans 'Create an account' %}</span>
                                                                 <span>(optional)</span>
                                                                 <br>
-                                                                <span class="text-muted">And save time on your next order!</span>
+                                                                <span class="text-muted">{% trans 'And save time on your next order!' %}</span>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="input-group js-parent-focus">
@@ -88,7 +89,7 @@
                                                             <div class="form-group row check-input">
                                                                 <span class="custom-checkbox d-inline-flex">
                                                                     <input class="check" name="optin" type="checkbox" value="1">
-                                                                    <label class="label-absolute">Receive offers from our partners</label>
+                                                                    <label class="label-absolute">{% trans 'Receive offers from our partners' %}</label>
                                                                 </span>
                                                             </div>
                                                             <div class="form-group row">
@@ -178,13 +179,13 @@
                                                     <span class="label">
                                                         Total Shipping:
                                                     </span>
-                                                    <span class="value">Free</span>
+                                                    <span class="value">{% trans 'Free' %}</span>
                                                     <div>
                                                         <small class="value"></small>
                                                     </div>
                                                 </div>
                                                 <div class="cart-summary-line cart-total">
-                                                    <span class="label">Total:</span>
+                                                    <span class="label">{% trans 'Total' %}:</span>
                                                     <span class="value">£200.00 (tax incl.)</span>
                                                 </div>
                                             </div>
@@ -194,19 +195,19 @@
                                                 <li>
                                                     <div class="block-reassurance-item">
                                                         <img src="{% static 'img/product/check1.png' %}" alt="Security policy (edit with Customer reassurance module)">
-                                                        <span>Security policy (edit with Customer reassurance module)</span>
+                                                        <span>{% trans 'Security policy' %}</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="block-reassurance-item">
                                                         <img src="{% static 'img/product/check2.png' %}" alt="Delivery policy (edit with Customer reassurance module)">
-                                                        <span>Delivery policy (edit with Customer reassurance module)</span>
+                                                        <span>{% trans 'Delivery policy' %}</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="block-reassurance-item">
                                                         <img src="{% static 'img/product/check3.png' %}" alt="Return policy (edit with Customer reassurance module)">
-                                                        <span>Return policy (edit with Customer reassurance module)</span>
+                                                        <span>{% trans 'Return policy' %}</span>
                                                     </div>
                                                 </li>
                                             </ul>

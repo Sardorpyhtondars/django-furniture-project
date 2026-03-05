@@ -13,7 +13,7 @@
         <div id="wrapper-site">
             <div id="content-wrapper">
                 <div id="main">
-                    <div class="page-home">
+                    <span>{% trans 'Home' %}</span>
 
                         <!-- breadcrumb -->
                         <nav class="breadcrumb-bg">
@@ -36,7 +36,7 @@
 
                                         <!-- category -->
                                         <div class="sidebar-block">
-                                            <div class="title-block">Categories</div>
+                                            <div class="title-block">{% trans 'Categories' %}</div>
                                             <div class="block-content">
                                                 <div class="cateTitle hasSubCategory open level1">
                                                     <span class="arrow collapse-icons collapsed" data-toggle="collapse" data-target="#livingroom" aria-expanded="false" role="status">
@@ -178,7 +178,7 @@
 
                                         <!-- recent posts -->
                                         <div class="sidebar-block">
-                                            <div class="title-block">Recent Posts</div>
+                                            <div class="title-block">{% trans 'Recent Posts' %}</div>
                                             <div class="post-item-content">
                                                 <div>
                                                     <div class="late-item first-child">
@@ -302,15 +302,15 @@
                                                 <div class="btn-group">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-share"></i>
-                                                        <span>Share</span>
+                                                        <span>{% trans 'Share' %}</span>
                                                     </a>
                                                     <a href="#" class="email">
                                                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                        <span>SEN TO A FRIEND</span>
+                                                        <span>{% trans 'SEND TO A FRIEND' %}</span>
                                                     </a>
                                                     <a href="#" class="print">
                                                         <i class="zmdi zmdi-print"></i>
-                                                        <span>Print</span>
+                                                        <span>{% trans 'Print' %}</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -334,7 +334,7 @@
                                         </div>
                                         {% endfor %}
                                         <div class="related">
-                                            <h2 class="title-block">Related News</h2>
+                                            <h2 class="title-block">{% trans 'Related News' %}</h2>
                                             <div class="main-blogs">
                                                 <div class="row">
                                                     <div class="col-md-4">
@@ -387,7 +387,7 @@
                                         </div>
                                         <div class="reply late-item">
                                             <div class="blog-comment" id="blog-comment">
-                                                <h2 class="title-block">Comments</h2>
+                                                <h2 class="title-block">{% trans 'Comments' %}</h2>
                                                 <img src="{% static 'img/blog/user1.jpg' %}" alt="img" class="float-left right">
                                             </div>
                                             <div class="comment-content">
@@ -446,7 +446,7 @@
                                             </div>
                                         </div>
                                         <div class="submit-comment" id="respond">
-                                            <h2 class="title-block">Submit comment</h2>
+                                            <h2 class="title-block">{% trans 'Submit comment' %}</h2>
                                             <div id="commentInput">
                                                 <form action="#" method="post" id="commentform">
                                                     <input type="hidden" name="comment_parent" id="comment_parent" value="0">

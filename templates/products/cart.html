@@ -1,4 +1,5 @@
 {% extends 'layout/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Products cart{% endblock %}
@@ -17,12 +18,12 @@
                         <ol>
                             <li>
                                 <a href="#">
-                                    <span>Home</span>
+                                    <span>{% trans 'Home' %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <span>Shopping Cart</span>
+                                    <span>{% trans 'Shopping Cart' %}</span>
                                 </a>
                             </li>
                         </ol>
@@ -35,7 +36,7 @@
                         <section id="main">
                             <div class="cart-grid row">
                                 <div class="col-md-9 col-xs-12 check-info">
-                                    <h1 class="title-page">Shopping Cart</h1>
+                                    <h1 class="title-page">{% trans 'Shopping Cart' %}</h1>
                                     <div class="cart-container">
                                         <div class="cart-overview js-cart">
                                             <ul class="cart-items">
@@ -57,20 +58,20 @@
                                                                 <span class="value">£20.00</span>
                                                             </div>
                                                             <div class="product-line-info">
-                                                                <span class="label-atrr">Size:</span>
+                                                                <span class="label-atrr">{% trans 'Size' %}:</span>
                                                                 <span class="value">S</span>
                                                             </div>
                                                             <div class="product-line-info">
-                                                                <span class="label-atrr">Color:</span>
+                                                                <span class="label-atrr">{% trans 'Color' %}:</span>
                                                                 <span class="value">Blue</span>
                                                             </div>
                                                         </div>
                                                         <div class="product-line-grid-right text-center product-line-actions col-md-4">
                                                             <div class="row">
-                                                                <div class="col-md-5 col qty">
-                                                                    <div class="label">Qty:</div>
+                                                                <div class="col-md-5 col quantity">
+                                                                    <div class="label">{% trans 'Quantity' %}:</div>
                                                                     <div class="quantity">
-                                                                        <input type="text" name="qty" value="1" class="input-group form-control">
+                                                                        <input type="text" name="quantity" value="1" class="input-group form-control">
 
                                                                         <span class="input-group-btn-vertical">
                                                                             <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
@@ -83,7 +84,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5 col price">
-                                                                    <div class="label">Total:</div>
+                                                                    <div class="label">{% trans 'Total' %}:</div>
                                                                     <div class="product-price total">
                                                                         £20.00
                                                                     </div>
@@ -118,20 +119,20 @@
                                                                 <span class="value">£30.00</span>
                                                             </div>
                                                             <div class="product-line-info">
-                                                                <span class="label-atrr">Size:</span>
+                                                                <span class="label-atrr">{% trans 'Size' %}:</span>
                                                                 <span class="value">S</span>
                                                             </div>
                                                             <div class="product-line-info">
-                                                                <span class="label-atrr">Color:</span>
+                                                                <span class="label-atrr">{% trans 'Color' %}:</span>
                                                                 <span class="value">Blue</span>
                                                             </div>
                                                         </div>
                                                         <div class="product-line-grid-right text-center product-line-actions col-md-4">
                                                             <div class="row">
-                                                                <div class="col-md-5 qty col">
-                                                                    <div class="label">Qty:</div>
+                                                                <div class="col-md-5 quantity col">
+                                                                    <div class="label">Quantity:</div>
                                                                     <div class="quantity">
-                                                                        <input type="text" name="qty" value="2" class="input-group form-control">
+                                                                        <input type="text" name="quantity" value="2" class="input-group form-control">
 
                                                                         <span class="input-group-btn-vertical">
                                                                             <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
@@ -144,7 +145,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5 price col">
-                                                                    <div class="label">Total:</div>
+                                                                    <div class="label">{% trans 'Total' %}:</div>
                                                                     <div class="product-price total">
                                                                         £60.00
                                                                     </div>
@@ -178,20 +179,20 @@
                                                                 <span class="value">£40.00</span>
                                                             </div>
                                                             <div class="product-line-info">
-                                                                <span class="label-atrr">Size:</span>
+                                                                <span class="label-atrr">{% trans 'Size' %}:</span>
                                                                 <span class="value">S</span>
                                                             </div>
                                                             <div class="product-line-info">
-                                                                <span class="label-atrr">Color:</span>
+                                                                <span class="label-atrr">{% trans 'Color' %}:</span>
                                                                 <span class="value">Blue</span>
                                                             </div>
                                                         </div>
                                                         <div class="product-line-grid-right text-center product-line-actions col-md-4">
                                                             <div class="row">
-                                                                <div class="col-md-5 col qty">
-                                                                    <div class="label">Qty:</div>
+                                                                <div class="col-md-5 col quantity">
+                                                                    <div class="label">{% trans 'Quantity' %}:</div>
                                                                     <div class="quantity">
-                                                                        <input type="text" name="qty" value="3" class="input-group form-control">
+                                                                        <input type="text" name="quantity" value="3" class="input-group form-control">
 
                                                                         <span class="input-group-btn-vertical">
                                                                             <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
@@ -204,7 +205,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5 col price">
-                                                                    <div class="label">Total:</div>
+                                                                    <div class="label">{% trans 'Total' %}:</div>
                                                                     <div class="product-price total">
                                                                         £120.00
                                                                     </div>
@@ -249,7 +250,7 @@
                                                 </div>
                                             </div>
                                             <div class="cart-summary-line cart-total">
-                                                <span class="label">Total:</span>
+                                                <span class="label">{% 'Total' %}:</span>
                                                 <span class="value">£200.00 (tax incl.)</span>
                                             </div>
                                         </div>
