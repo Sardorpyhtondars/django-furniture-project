@@ -13,9 +13,6 @@ def about_us_view(request):
     }
     return render(request, 'shared/about-us.html', context)
 
-def account_view(request):
-    return render(request, 'shared/account.html')
-
 def blog_detail_view(request):
     return render(request, 'shared/blog-detail.html')
 
@@ -47,17 +44,11 @@ def contact_view(request):
             messages.error(request, error_text)
         return render(request, 'shared/contact.html')
 
-def login_view(request):
-    return render(request, 'shared/login.html')
-
 def product_detail_view(request):
     return render(request, 'shared/product-detail.html')
 
 def products_list_view(request):
     return render(request, 'shared/products-list.html')
-
-def register_view(request):
-    return render(request, 'shared/register.html')
 
 def reset_password_view(request):
     return render(request, 'shared/reset-password.html')
