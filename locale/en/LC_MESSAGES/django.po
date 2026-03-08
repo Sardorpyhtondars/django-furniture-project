@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-05 14:21+0500\n"
+"POT-Creation-Date: 2026-03-05 15:33+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,11 @@ msgstr ""
 
 #: .\templates\blogs\blog-detail.html:5
 msgid "Blog detail"
-msgstr ""
+msgstr "Blog detail"
 
 #: .\templates\blogs\blog-detail.html:16 .\templates\blogs\blogs-list.html:25
-#: .\templates\products\cart.html:21 .\templates\products\checkout.html:20
+#: .\templates\layout\header.html:114 .\templates\products\cart.html:21
+#: .\templates\products\checkout.html:20
 #: .\templates\products\product-detail.html:24
 #: .\templates\products\products-list.html:24
 #: .\templates\products\wishlist.html:22 .\templates\shared\about-us.html:23
@@ -31,259 +32,275 @@ msgstr ""
 #: .\templates\users\login.html:21 .\templates\users\register.html:21
 #: .\templates\users\reset-password.html:21
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: .\templates\blogs\blog-detail.html:39 .\templates\blogs\blogs-list.html:49
 #: .\templates\products\product-detail.html:48
 #: .\templates\products\products-list.html:49
 msgid "Categories"
-msgstr ""
+msgstr "Categories"
 
 #: .\templates\blogs\blog-detail.html:181 .\templates\blogs\blogs-list.html:73
 #: .\templates\blogs\blogs-list.html:125
 msgid "Recent Posts"
-msgstr ""
+msgstr "Recent Posts"
 
 #: .\templates\blogs\blog-detail.html:305
 #: .\templates\products\product-detail.html:520
 msgid "Share"
-msgstr ""
+msgstr "Share"
 
 #: .\templates\blogs\blog-detail.html:309
 #: .\templates\products\product-detail.html:524
 msgid "SEND TO A FRIEND"
-msgstr ""
+msgstr "SEND TO A FRIEND"
 
 #: .\templates\blogs\blog-detail.html:313
 #: .\templates\products\product-detail.html:528
 msgid "Print"
-msgstr ""
+msgstr "Print"
 
 #: .\templates\blogs\blog-detail.html:337
 msgid "Related News"
-msgstr ""
+msgstr "Related News"
 
 #: .\templates\blogs\blog-detail.html:390
 msgid "Comments"
-msgstr ""
+msgstr "Comments"
 
 #: .\templates\blogs\blog-detail.html:449
 msgid "Submit comment"
-msgstr ""
+msgstr "Submit comment"
 
 #: .\templates\layout\footer.html:24
 msgid "About Us"
-msgstr ""
+msgstr "About Us"
 
 #: .\templates\layout\footer.html:27
 msgid "Reasons to shop"
-msgstr ""
+msgstr "Reasons to shop"
 
 #: .\templates\layout\footer.html:30
 msgid "What our customers say"
-msgstr ""
+msgstr "What our customers say"
 
 #: .\templates\layout\footer.html:33
 msgid "Meet the team"
-msgstr ""
+msgstr "Meet the team"
 
 #: .\templates\layout\footer.html:36
 msgid "Contact our buyers"
-msgstr ""
+msgstr "Contact our buyers"
 
 #: .\templates\layout\footer.html:58 .\templates\shared\contact.html:67
 #: .\templates\users\account.html:50
 msgid "Address"
-msgstr ""
+msgstr "Address"
 
 #: .\templates\layout\footer.html:68 .\templates\shared\contact.html:50
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: .\templates\layout\footer.html:77 .\templates\shared\contact.html:83
 msgid "Hotline"
-msgstr ""
+msgstr "Hotline"
 
 #: .\templates\layout\footer.html:86
 msgid "Opening Hours"
-msgstr ""
+msgstr "Opening Hours"
 
 #: .\templates\layout\footer.html:99
 msgid "Newsletter"
-msgstr ""
+msgstr "Newsletter"
 
 #: .\templates\layout\footer.html:109
 msgid "Subscribe"
+msgstr "Subscribe"
+
+#: .\templates\layout\header.html:117
+msgid "Blogs"
 msgstr ""
+
+#: .\templates\layout\header.html:120
+msgid "Products"
+msgstr ""
+
+#: .\templates\layout\header.html:123
+#, fuzzy
+#| msgid "About Us"
+msgid "About"
+msgstr "About Us"
+
+#: .\templates\layout\header.html:126 .\templates\shared\contact.html:28
+msgid "Contact"
+msgstr "Contact"
 
 #: .\templates\layout\header.html:147
 msgid "Account"
-msgstr ""
+msgstr "Account"
 
 #: .\templates\layout\header.html:156 .\templates\users\account.html:26
 #: .\templates\users\account.html:37
 msgid "My Account"
-msgstr ""
+msgstr "My Account"
 
 #: .\templates\layout\header.html:162
 msgid "Sign in"
-msgstr ""
+msgstr "Sign in"
 
 #: .\templates\layout\header.html:168
 msgid "Register Account"
-msgstr ""
+msgstr "Register Account"
 
 #: .\templates\layout\header.html:174 .\templates\products\checkout.html:25
 msgid "Checkout"
-msgstr ""
+msgstr "Checkout"
 
 #: .\templates\layout\header.html:180
 msgid "My Wishlists"
-msgstr ""
+msgstr "My Wishlists"
 
 #: .\templates\layout\header.html:244 .\templates\products\cart.html:87
 #: .\templates\products\cart.html:148 .\templates\products\cart.html:208
 #: .\templates\products\checkout.html:188
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: .\templates\layout\header.html:251
 msgid "View Cart"
-msgstr ""
+msgstr "View Cart"
 
 #: .\templates\products\cart.html:26 .\templates\products\cart.html:39
 msgid "Shopping Cart"
-msgstr ""
+msgstr "Shopping Cart"
 
 #: .\templates\products\cart.html:61 .\templates\products\cart.html:122
 #: .\templates\products\cart.html:182
 #: .\templates\products\product-detail.html:465
 msgid "Size"
-msgstr ""
+msgstr "Size"
 
 #: .\templates\products\cart.html:65 .\templates\products\cart.html:126
 #: .\templates\products\cart.html:186
 #: .\templates\products\product-detail.html:474
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
-#: .\templates\products\cart.html:72 .\templates\products\cart.html:193
+#: .\templates\products\cart.html:72 .\templates\products\cart.html:133
+#: .\templates\products\cart.html:193
+#: .\templates\products\product-detail.html:488
 #: .\templates\products\wishlist.html:62
 msgid "Quantity"
-msgstr ""
+msgstr "Quantity"
 
 #: .\templates\products\checkout.html:74
 msgid "Create an account"
-msgstr ""
+msgstr "Create an account"
 
 #: .\templates\products\checkout.html:77
 msgid "And save time on your next order!"
-msgstr ""
+msgstr "And save time on your next order!"
 
 #: .\templates\products\checkout.html:92
 msgid "Receive offers from our partners"
-msgstr ""
+msgstr "Receive offers from our partners"
 
 #: .\templates\products\checkout.html:182
 msgid "Free"
-msgstr ""
+msgstr "Free"
 
 #: .\templates\products\checkout.html:198
 msgid "Security policy"
-msgstr ""
+msgstr "Security policy"
 
 #: .\templates\products\checkout.html:204
 msgid "Delivery policy"
-msgstr ""
+msgstr "Delivery policy"
 
 #: .\templates\products\checkout.html:210
 msgid "Return policy"
-msgstr ""
+msgstr "Return policy"
 
 #: .\templates\products\product-detail.html:456
 msgid "Availability"
-msgstr ""
+msgstr "Availability"
 
 #: .\templates\products\product-detail.html:467
 msgid "Choose your size"
-msgstr ""
-
-#: .\templates\products\product-detail.html:488
-msgid "Quantity:"
-msgstr ""
+msgstr "Choose your size"
 
 #: .\templates\products\product-detail.html:503
 msgid "Add to cart"
-msgstr ""
+msgstr "Add to cart"
 
 #: .\templates\products\product-detail.html:534
 msgid "REVIEW"
-msgstr ""
+msgstr "REVIEW"
 
 #: .\templates\products\product-detail.html:548
 msgid "READ REVIEWS (3)"
-msgstr ""
+msgstr "READ REVIEWS (3)"
 
 #: .\templates\products\product-detail.html:554
 msgid "WRITE A REVIEW"
-msgstr ""
+msgstr "WRITE A REVIEW"
 
 #: .\templates\products\product-detail.html:670
 msgid "Write a review"
-msgstr ""
+msgstr "Write a review"
 
 #: .\templates\products\products-list.html:191
 msgid "Catalog"
-msgstr ""
+msgstr "Catalog"
 
 #: .\templates\products\products-list.html:193
 msgid "categories"
-msgstr ""
+msgstr "categories"
 
 #: .\templates\products\products-list.html:270
 msgid "Manufacture"
-msgstr ""
+msgstr "Manufacture"
 
 #: .\templates\products\wishlist.html:48
 msgid "New wishlist"
-msgstr ""
+msgstr "New wishlist"
 
 #: .\templates\products\wishlist.html:61
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: .\templates\products\wishlist.html:63
 msgid "Viewed"
-msgstr ""
+msgstr "Viewed"
 
 #: .\templates\products\wishlist.html:64
 msgid "Created"
-msgstr ""
+msgstr "Created"
 
 #: .\templates\products\wishlist.html:65
 msgid "Direct Link"
-msgstr ""
+msgstr "Direct Link"
 
 #: .\templates\products\wishlist.html:66
 msgid "Default"
-msgstr ""
+msgstr "Default"
 
 #: .\templates\products\wishlist.html:67
 #: .\venv\Lib\site-packages\django\forms\formsets.py:499
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 #: .\templates\products\wishlist.html:73
 msgid "My wishlist"
-msgstr ""
+msgstr "My wishlist"
 
 #: .\templates\products\wishlist.html:98
 msgid "Homepage"
-msgstr ""
+msgstr "Homepage"
 
 #: .\templates\shared\404.html:22
 msgid "We're sorry — something has gone wrong on our end."
-msgstr ""
+msgstr "We're sorry — something has gone wrong on our end."
 
 #: .\templates\shared\404.html:24
 msgid ""
@@ -293,92 +310,88 @@ msgstr ""
 
 #: .\templates\shared\404.html:28
 msgid "Back to homepage"
-msgstr ""
+msgstr "Back to homepage"
 
 #: .\templates\shared\about-us.html:28 .\templates\users\register.html:26
 msgid "About us"
-msgstr ""
+msgstr "About us"
 
 #: .\templates\shared\about-us.html:49
 msgid "WHO WE ARE"
-msgstr ""
+msgstr "WHO WE ARE"
 
 #: .\templates\shared\about-us.html:65
 msgid "WHAT WE DO"
-msgstr ""
+msgstr "WHAT WE DO"
 
 #: .\templates\shared\about-us.html:87
 msgid "MEET OUR TEAM"
-msgstr ""
+msgstr "MEET OUR TEAM"
 
 #: .\templates\shared\about-us.html:96
 msgid "No team members found."
-msgstr ""
-
-#: .\templates\shared\contact.html:28
-msgid "Contact"
-msgstr ""
+msgstr "No team members found."
 
 #: .\templates\shared\contact.html:38
 msgid "Contact Us"
-msgstr ""
+msgstr "Contact Us"
 
 #: .\templates\shared\home.html:561
 msgid "FREE DELIVERY FROM $ 250"
-msgstr ""
+msgstr "FREE DELIVERY FROM $ 250"
 
 #: .\templates\users\account.html:42
 msgid "My Name"
-msgstr ""
+msgstr "My Name"
 
 #: .\templates\users\account.html:46
 msgid "Company"
-msgstr ""
+msgstr "Company"
 
 #: .\templates\users\account.html:54
 msgid "City"
-msgstr ""
+msgstr "City"
 
 #: .\templates\users\account.html:58
 msgid "Postal/Zip Code"
-msgstr ""
+msgstr "Postal/Zip Code"
 
 #: .\templates\users\account.html:62
 msgid "Phone"
-msgstr ""
+msgstr "Phone"
 
 #: .\templates\users\account.html:66
 msgid "Country"
-msgstr ""
+msgstr "Country"
 
 #: .\templates\users\account.html:78
 msgid "History"
-msgstr ""
+msgstr "History"
 
 #: .\templates\users\account.html:80
 msgid "You haven't placed any orders yet."
-msgstr ""
+msgstr "You haven't placed any orders yet."
 
 #: .\templates\users\login.html:26
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: .\templates\users\login.html:41
 msgid "Log In"
-msgstr ""
+msgstr "Log In"
 
 #: .\templates\users\register.html:43 .\templates\users\register.html:77
 msgid "Create Account"
-msgstr ""
+msgstr "Create Account"
 
 #: .\templates\users\reset-password.html:26
 #: .\templates\users\reset-password.html:43
 msgid "User Reset Password"
-msgstr ""
+msgstr "User Reset Password"
 
 #: .\templates\users\reset-password.html:57
 msgid "Back to login"
-msgstr ""
+msgstr "Back to login"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"

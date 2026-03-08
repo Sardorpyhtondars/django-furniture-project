@@ -101,7 +101,7 @@
                     </div>
 
                     <!-- menu -->
-                    <div class="col-sm-5 col-md-5 align-items-center justify-content-center navbar-expand-md main-menu">
+                    <div class="col-sm-5 col-md-5 align-items-center justify-content-center navbar-expand-md main-menu" style="position: relative; z-index: 2;">
                         <div class="menu navbar collapse navbar-collapse">
                             {% url 'shared:home' as home_url %}
                             {% url 'shared:about' as about_url %}
@@ -111,26 +111,26 @@
 
                             <ul class="menu-top navbar-nav">
                                 <li {% if request.path == home_url %}class="nav-link"{% endif %}>
-                                    <a href="{% url 'shared:home' %}" class="parent">Home</a>
+                                    <a href="{% url 'shared:home' %}" class="parent">{% trans 'Home' %}</a>
                                 </li>
                                 <li {% if request.path == blogs_url %}class="nav-link"{% endif %}>
-                                    <a href="{% url 'blogs:list' %}" class="parent">Blogs</a>
+                                    <a href="{% url 'blogs:list' %}" class="parent">{% trans 'Blogs' %}</a>
                                 </li>
                                 <li {% if request.path == products_url %}class="nav-link"{% endif %}>
-                                    <a href="{% url 'products:list' %}" class="parent">Products</a>
+                                    <a href="{% url 'products:list' %}" class="parent">{% trans 'Products' %}</a>
                                 </li>
                                 <li {% if request.path == about_url %}class="nav-link"{% endif %}>
-                                    <a href="{% url 'shared:about' %}" class="parent">About</a>
+                                    <a href="{% url 'shared:about' %}" class="parent">{% trans 'About' %}</a>
                                 </li>
                                 <li {% if request.path == contact_url %}class="nav-link"{% endif %}>
-                                    <a href="{% url 'shared:contact' %}" class="parent">Contact</a>
+                                    <a href="{% url 'shared:contact' %}" class="parent">{% trans 'Contact' %}</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- search and acount -->
-                    <div class="col-sm-5 col-md-5 d-flex align-items-center justify-content-end" id="search_widget">
+                    <div class="col-sm-5 col-md-5 d-flex align-items-center justify-content-end" id="search_widget" style="position: relative; z-index: 1;">
                         <form method="get" action="#">
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>

@@ -41,6 +41,7 @@
                         <h1 class="text-center title-page">{% trans 'Log In' %}</h1>
                         <div class="login-form">
                             <form id="customer-form" action="{% url 'users:login' %}" method="post">
+                                {% csrf_token %}
                                 <div>
                                     <input type="hidden" name="back" value="my-account">
                                     <div class="form-group no-gutters">

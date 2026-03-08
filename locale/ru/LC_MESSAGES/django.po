@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-05 14:21+0500\n"
+"POT-Creation-Date: 2026-03-05 15:33+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,11 @@ msgstr ""
 
 #: .\templates\blogs\blog-detail.html:5
 msgid "Blog detail"
-msgstr ""
+msgstr "Детали блога"
 
 #: .\templates\blogs\blog-detail.html:16 .\templates\blogs\blogs-list.html:25
-#: .\templates\products\cart.html:21 .\templates\products\checkout.html:20
+#: .\templates\layout\header.html:114 .\templates\products\cart.html:21
+#: .\templates\products\checkout.html:20
 #: .\templates\products\product-detail.html:24
 #: .\templates\products\products-list.html:24
 #: .\templates\products\wishlist.html:22 .\templates\shared\about-us.html:23
@@ -33,259 +34,273 @@ msgstr ""
 #: .\templates\users\login.html:21 .\templates\users\register.html:21
 #: .\templates\users\reset-password.html:21
 msgid "Home"
-msgstr ""
+msgstr "Главная"
 
 #: .\templates\blogs\blog-detail.html:39 .\templates\blogs\blogs-list.html:49
 #: .\templates\products\product-detail.html:48
 #: .\templates\products\products-list.html:49
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #: .\templates\blogs\blog-detail.html:181 .\templates\blogs\blogs-list.html:73
 #: .\templates\blogs\blogs-list.html:125
 msgid "Recent Posts"
-msgstr ""
+msgstr "Последние записи"
 
 #: .\templates\blogs\blog-detail.html:305
 #: .\templates\products\product-detail.html:520
 msgid "Share"
-msgstr ""
+msgstr "Поделиться"
 
 #: .\templates\blogs\blog-detail.html:309
 #: .\templates\products\product-detail.html:524
 msgid "SEND TO A FRIEND"
-msgstr ""
+msgstr "ОТПРАВИТЬ ДРУГУ"
 
 #: .\templates\blogs\blog-detail.html:313
 #: .\templates\products\product-detail.html:528
 msgid "Print"
-msgstr ""
+msgstr "Печать"
 
 #: .\templates\blogs\blog-detail.html:337
 msgid "Related News"
-msgstr ""
+msgstr "Похожие новости"
 
 #: .\templates\blogs\blog-detail.html:390
 msgid "Comments"
-msgstr ""
+msgstr "Комментарии"
 
 #: .\templates\blogs\blog-detail.html:449
 msgid "Submit comment"
-msgstr ""
+msgstr "Отправить комментарий"
 
 #: .\templates\layout\footer.html:24
 msgid "About Us"
-msgstr ""
+msgstr "О нас"
 
 #: .\templates\layout\footer.html:27
 msgid "Reasons to shop"
-msgstr ""
+msgstr "Причины делать покупки"
 
 #: .\templates\layout\footer.html:30
 msgid "What our customers say"
-msgstr ""
+msgstr "Что говорят наши клиенты"
 
 #: .\templates\layout\footer.html:33
 msgid "Meet the team"
-msgstr ""
+msgstr "Познакомьтесь с командой"
 
 #: .\templates\layout\footer.html:36
 msgid "Contact our buyers"
-msgstr ""
+msgstr "Свяжитесь с нашими покупателями"
 
 #: .\templates\layout\footer.html:58 .\templates\shared\contact.html:67
 #: .\templates\users\account.html:50
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: .\templates\layout\footer.html:68 .\templates\shared\contact.html:50
 msgid "Email"
-msgstr ""
+msgstr "Электронная почта"
 
 #: .\templates\layout\footer.html:77 .\templates\shared\contact.html:83
 msgid "Hotline"
-msgstr ""
+msgstr "Горячая линия"
 
 #: .\templates\layout\footer.html:86
 msgid "Opening Hours"
-msgstr ""
+msgstr "Часы работы"
 
 #: .\templates\layout\footer.html:99
 msgid "Newsletter"
-msgstr ""
+msgstr "Рассылка"
 
 #: .\templates\layout\footer.html:109
 msgid "Subscribe"
-msgstr ""
+msgstr "Подписаться"
+
+#: .\templates\layout\header.html:117
+msgid "Blogs"
+msgstr "Блоги"
+
+#: .\templates\layout\header.html:120
+msgid "Products"
+msgstr "Продукты"
+
+#: .\templates\layout\header.html:123
+msgid "About"
+msgstr "О нас"
+
+#: .\templates\layout\header.html:126 .\templates\shared\contact.html:28
+msgid "Contact"
+msgstr "Контакты"
 
 #: .\templates\layout\header.html:147
 msgid "Account"
-msgstr ""
+msgstr "Аккаунт"
 
 #: .\templates\layout\header.html:156 .\templates\users\account.html:26
 #: .\templates\users\account.html:37
 msgid "My Account"
-msgstr ""
+msgstr "Мой аккаунт"
 
 #: .\templates\layout\header.html:162
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: .\templates\layout\header.html:168
 msgid "Register Account"
-msgstr ""
+msgstr "Зарегистрироваться"
 
 #: .\templates\layout\header.html:174 .\templates\products\checkout.html:25
 msgid "Checkout"
-msgstr ""
+msgstr "Оформить заказ"
 
 #: .\templates\layout\header.html:180
 msgid "My Wishlists"
-msgstr ""
+msgstr "Мои списки желаний"
 
 #: .\templates\layout\header.html:244 .\templates\products\cart.html:87
 #: .\templates\products\cart.html:148 .\templates\products\cart.html:208
 #: .\templates\products\checkout.html:188
 msgid "Total"
-msgstr ""
+msgstr "Итого"
 
 #: .\templates\layout\header.html:251
 msgid "View Cart"
-msgstr ""
+msgstr "Просмотр корзины"
 
 #: .\templates\products\cart.html:26 .\templates\products\cart.html:39
 msgid "Shopping Cart"
-msgstr ""
+msgstr "Корзина"
 
 #: .\templates\products\cart.html:61 .\templates\products\cart.html:122
 #: .\templates\products\cart.html:182
 #: .\templates\products\product-detail.html:465
 msgid "Size"
-msgstr ""
+msgstr "Размер"
 
 #: .\templates\products\cart.html:65 .\templates\products\cart.html:126
 #: .\templates\products\cart.html:186
 #: .\templates\products\product-detail.html:474
 msgid "Color"
-msgstr ""
+msgstr "Цвет"
 
-#: .\templates\products\cart.html:72 .\templates\products\cart.html:193
+#: .\templates\products\cart.html:72 .\templates\products\cart.html:133
+#: .\templates\products\cart.html:193
+#: .\templates\products\product-detail.html:488
 #: .\templates\products\wishlist.html:62
 msgid "Quantity"
-msgstr ""
+msgstr "Количество"
 
 #: .\templates\products\checkout.html:74
 msgid "Create an account"
-msgstr ""
+msgstr "Создать аккаунт"
 
 #: .\templates\products\checkout.html:77
 msgid "And save time on your next order!"
-msgstr ""
+msgstr "И сэкономьте время на следующем заказе!"
 
 #: .\templates\products\checkout.html:92
 msgid "Receive offers from our partners"
-msgstr ""
+msgstr "Получайте предложения от наших партнёров"
 
 #: .\templates\products\checkout.html:182
 msgid "Free"
-msgstr ""
+msgstr "Бесплатно"
 
 #: .\templates\products\checkout.html:198
 msgid "Security policy"
-msgstr ""
+msgstr "Политика безопасности"
 
 #: .\templates\products\checkout.html:204
 msgid "Delivery policy"
-msgstr ""
+msgstr "Политика доставки"
 
 #: .\templates\products\checkout.html:210
 msgid "Return policy"
-msgstr ""
+msgstr "Политика возврата"
 
 #: .\templates\products\product-detail.html:456
 msgid "Availability"
-msgstr ""
+msgstr "Наличие"
 
 #: .\templates\products\product-detail.html:467
 msgid "Choose your size"
-msgstr ""
-
-#: .\templates\products\product-detail.html:488
-msgid "Quantity:"
-msgstr ""
+msgstr "Выберите размер"
 
 #: .\templates\products\product-detail.html:503
 msgid "Add to cart"
-msgstr ""
+msgstr "Добавить в корзину"
 
 #: .\templates\products\product-detail.html:534
 msgid "REVIEW"
-msgstr ""
+msgstr "ОТЗЫВ"
 
 #: .\templates\products\product-detail.html:548
 msgid "READ REVIEWS (3)"
-msgstr ""
+msgstr "ЧИТАТЬ ОТЗЫВЫ (3)"
 
 #: .\templates\products\product-detail.html:554
 msgid "WRITE A REVIEW"
-msgstr ""
+msgstr "НАПИСАТЬ ОТЗЫВ"
 
 #: .\templates\products\product-detail.html:670
 msgid "Write a review"
-msgstr ""
+msgstr "Написать отзыв"
 
 #: .\templates\products\products-list.html:191
 msgid "Catalog"
-msgstr ""
+msgstr "Каталог"
 
 #: .\templates\products\products-list.html:193
 msgid "categories"
-msgstr ""
+msgstr "категории"
 
 #: .\templates\products\products-list.html:270
 msgid "Manufacture"
-msgstr ""
+msgstr "Производитель"
 
 #: .\templates\products\wishlist.html:48
 msgid "New wishlist"
-msgstr ""
+msgstr "Новый список желаний"
 
 #: .\templates\products\wishlist.html:61
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: .\templates\products\wishlist.html:63
 msgid "Viewed"
-msgstr ""
+msgstr "Просмотрено"
 
 #: .\templates\products\wishlist.html:64
 msgid "Created"
-msgstr ""
+msgstr "Создано"
 
 #: .\templates\products\wishlist.html:65
 msgid "Direct Link"
-msgstr ""
+msgstr "Прямая ссылка"
 
 #: .\templates\products\wishlist.html:66
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: .\templates\products\wishlist.html:67
 #: .\venv\Lib\site-packages\django\forms\formsets.py:499
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: .\templates\products\wishlist.html:73
 msgid "My wishlist"
-msgstr ""
+msgstr "Мой список желаний"
 
 #: .\templates\products\wishlist.html:98
 msgid "Homepage"
-msgstr ""
+msgstr "Главная страница"
 
 #: .\templates\shared\404.html:22
 msgid "We're sorry — something has gone wrong on our end."
-msgstr ""
+msgstr "Извините — что-то пошло не так с нашей стороны."
 
 #: .\templates\shared\404.html:24
 msgid ""
@@ -295,92 +310,88 @@ msgstr ""
 
 #: .\templates\shared\404.html:28
 msgid "Back to homepage"
-msgstr ""
+msgstr "Вернуться на главную"
 
 #: .\templates\shared\about-us.html:28 .\templates\users\register.html:26
 msgid "About us"
-msgstr ""
+msgstr "О нас"
 
 #: .\templates\shared\about-us.html:49
 msgid "WHO WE ARE"
-msgstr ""
+msgstr "КТО МЫ"
 
 #: .\templates\shared\about-us.html:65
 msgid "WHAT WE DO"
-msgstr ""
+msgstr "ЧТО МЫ ДЕЛАЕМ"
 
 #: .\templates\shared\about-us.html:87
 msgid "MEET OUR TEAM"
-msgstr ""
+msgstr "ПОЗНАКОМЬТЕСЬ С НАШЕЙ КОМАНДОЙ"
 
 #: .\templates\shared\about-us.html:96
 msgid "No team members found."
-msgstr ""
-
-#: .\templates\shared\contact.html:28
-msgid "Contact"
-msgstr ""
+msgstr "Члены команды не найдены."
 
 #: .\templates\shared\contact.html:38
 msgid "Contact Us"
-msgstr ""
+msgstr "Свяжитесь с нами"
 
 #: .\templates\shared\home.html:561
 msgid "FREE DELIVERY FROM $ 250"
-msgstr ""
+msgstr "БЕСПЛАТНАЯ ДОСТАВКА ОТ $ 250"
 
 #: .\templates\users\account.html:42
 msgid "My Name"
-msgstr ""
+msgstr "Моё имя"
 
 #: .\templates\users\account.html:46
 msgid "Company"
-msgstr ""
+msgstr "Компания"
 
 #: .\templates\users\account.html:54
 msgid "City"
-msgstr ""
+msgstr "Город"
 
 #: .\templates\users\account.html:58
 msgid "Postal/Zip Code"
-msgstr ""
+msgstr "Почтовый индекс"
 
 #: .\templates\users\account.html:62
 msgid "Phone"
-msgstr ""
+msgstr "Телефон"
 
 #: .\templates\users\account.html:66
 msgid "Country"
-msgstr ""
+msgstr "Страна"
 
 #: .\templates\users\account.html:78
 msgid "History"
-msgstr ""
+msgstr "История"
 
 #: .\templates\users\account.html:80
 msgid "You haven't placed any orders yet."
-msgstr ""
+msgstr "Вы ещё не сделали ни одного заказа."
 
 #: .\templates\users\login.html:26
 msgid "Login"
-msgstr ""
+msgstr "Вход"
 
 #: .\templates\users\login.html:41
 msgid "Log In"
-msgstr ""
+msgstr "Войти"
 
 #: .\templates\users\register.html:43 .\templates\users\register.html:77
 msgid "Create Account"
-msgstr ""
+msgstr "Создать аккаунт"
 
 #: .\templates\users\reset-password.html:26
 #: .\templates\users\reset-password.html:43
 msgid "User Reset Password"
-msgstr ""
+msgstr "Сброс пароля"
 
 #: .\templates\users\reset-password.html:57
 msgid "Back to login"
-msgstr ""
+msgstr "Вернуться к входу"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"

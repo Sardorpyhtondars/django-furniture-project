@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-05 14:21+0500\n"
+"POT-Creation-Date: 2026-03-05 15:33+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,11 @@ msgstr ""
 
 #: .\templates\blogs\blog-detail.html:5
 msgid "Blog detail"
-msgstr ""
+msgstr "Blog tafsiloti"
 
 #: .\templates\blogs\blog-detail.html:16 .\templates\blogs\blogs-list.html:25
-#: .\templates\products\cart.html:21 .\templates\products\checkout.html:20
+#: .\templates\layout\header.html:114 .\templates\products\cart.html:21
+#: .\templates\products\checkout.html:20
 #: .\templates\products\product-detail.html:24
 #: .\templates\products\products-list.html:24
 #: .\templates\products\wishlist.html:22 .\templates\shared\about-us.html:23
@@ -31,259 +32,273 @@ msgstr ""
 #: .\templates\users\login.html:21 .\templates\users\register.html:21
 #: .\templates\users\reset-password.html:21
 msgid "Home"
-msgstr ""
+msgstr "Bosh sahifa"
 
 #: .\templates\blogs\blog-detail.html:39 .\templates\blogs\blogs-list.html:49
 #: .\templates\products\product-detail.html:48
 #: .\templates\products\products-list.html:49
 msgid "Categories"
-msgstr ""
+msgstr "Kategoriyalar"
 
 #: .\templates\blogs\blog-detail.html:181 .\templates\blogs\blogs-list.html:73
 #: .\templates\blogs\blogs-list.html:125
 msgid "Recent Posts"
-msgstr ""
+msgstr "So'nggi postlar"
 
 #: .\templates\blogs\blog-detail.html:305
 #: .\templates\products\product-detail.html:520
 msgid "Share"
-msgstr ""
+msgstr "Ulashish"
 
 #: .\templates\blogs\blog-detail.html:309
 #: .\templates\products\product-detail.html:524
 msgid "SEND TO A FRIEND"
-msgstr ""
+msgstr "DO'STGA YUBORISH"
 
 #: .\templates\blogs\blog-detail.html:313
 #: .\templates\products\product-detail.html:528
 msgid "Print"
-msgstr ""
+msgstr "Chop etish"
 
 #: .\templates\blogs\blog-detail.html:337
 msgid "Related News"
-msgstr ""
+msgstr "Tegishli yangiliklar"
 
 #: .\templates\blogs\blog-detail.html:390
 msgid "Comments"
-msgstr ""
+msgstr "Izohlar"
 
 #: .\templates\blogs\blog-detail.html:449
 msgid "Submit comment"
-msgstr ""
+msgstr "Izoh yuborish"
 
 #: .\templates\layout\footer.html:24
 msgid "About Us"
-msgstr ""
+msgstr "Biz haqimizda"
 
 #: .\templates\layout\footer.html:27
 msgid "Reasons to shop"
-msgstr ""
+msgstr "Xarid qilish sabablari"
 
 #: .\templates\layout\footer.html:30
 msgid "What our customers say"
-msgstr ""
+msgstr "Mijozlarimiz nima deydi"
 
 #: .\templates\layout\footer.html:33
 msgid "Meet the team"
-msgstr ""
+msgstr "Jamoa bilan tanishing"
 
 #: .\templates\layout\footer.html:36
 msgid "Contact our buyers"
-msgstr ""
+msgstr "Xaridorlarimiz bilan bog'laning"
 
 #: .\templates\layout\footer.html:58 .\templates\shared\contact.html:67
 #: .\templates\users\account.html:50
 msgid "Address"
-msgstr ""
+msgstr "Manzil"
 
 #: .\templates\layout\footer.html:68 .\templates\shared\contact.html:50
 msgid "Email"
-msgstr ""
+msgstr "Elektron pochta"
 
 #: .\templates\layout\footer.html:77 .\templates\shared\contact.html:83
 msgid "Hotline"
-msgstr ""
+msgstr "Murojaat liniyasi"
 
 #: .\templates\layout\footer.html:86
 msgid "Opening Hours"
-msgstr ""
+msgstr "Ish vaqti"
 
 #: .\templates\layout\footer.html:99
 msgid "Newsletter"
-msgstr ""
+msgstr "Yangiliklar xabarnomasi"
 
 #: .\templates\layout\footer.html:109
 msgid "Subscribe"
-msgstr ""
+msgstr "Obuna bo'lish"
+
+#: .\templates\layout\header.html:117
+msgid "Blogs"
+msgstr "Bloglar"
+
+#: .\templates\layout\header.html:120
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: .\templates\layout\header.html:123
+msgid "About"
+msgstr "Haqimizda"
+
+#: .\templates\layout\header.html:126 .\templates\shared\contact.html:28
+msgid "Contact"
+msgstr "Aloqa"
 
 #: .\templates\layout\header.html:147
 msgid "Account"
-msgstr ""
+msgstr "Hisob"
 
 #: .\templates\layout\header.html:156 .\templates\users\account.html:26
 #: .\templates\users\account.html:37
 msgid "My Account"
-msgstr ""
+msgstr "Mening hisobim"
 
 #: .\templates\layout\header.html:162
 msgid "Sign in"
-msgstr ""
+msgstr "Kirish"
 
 #: .\templates\layout\header.html:168
 msgid "Register Account"
-msgstr ""
+msgstr "Ro'yxatdan o'tish"
 
 #: .\templates\layout\header.html:174 .\templates\products\checkout.html:25
 msgid "Checkout"
-msgstr ""
+msgstr "To'lov"
 
 #: .\templates\layout\header.html:180
 msgid "My Wishlists"
-msgstr ""
+msgstr "Mening istaklarim"
 
 #: .\templates\layout\header.html:244 .\templates\products\cart.html:87
 #: .\templates\products\cart.html:148 .\templates\products\cart.html:208
 #: .\templates\products\checkout.html:188
 msgid "Total"
-msgstr ""
+msgstr "Jami"
 
 #: .\templates\layout\header.html:251
 msgid "View Cart"
-msgstr ""
+msgstr "Savatni ko'rish"
 
 #: .\templates\products\cart.html:26 .\templates\products\cart.html:39
 msgid "Shopping Cart"
-msgstr ""
+msgstr "Savat"
 
 #: .\templates\products\cart.html:61 .\templates\products\cart.html:122
 #: .\templates\products\cart.html:182
 #: .\templates\products\product-detail.html:465
 msgid "Size"
-msgstr ""
+msgstr "O'lcham"
 
 #: .\templates\products\cart.html:65 .\templates\products\cart.html:126
 #: .\templates\products\cart.html:186
 #: .\templates\products\product-detail.html:474
 msgid "Color"
-msgstr ""
+msgstr "Rang"
 
-#: .\templates\products\cart.html:72 .\templates\products\cart.html:193
+#: .\templates\products\cart.html:72 .\templates\products\cart.html:133
+#: .\templates\products\cart.html:193
+#: .\templates\products\product-detail.html:488
 #: .\templates\products\wishlist.html:62
 msgid "Quantity"
-msgstr ""
+msgstr "Miqdor"
 
 #: .\templates\products\checkout.html:74
 msgid "Create an account"
-msgstr ""
+msgstr "Hisob yaratish"
 
 #: .\templates\products\checkout.html:77
 msgid "And save time on your next order!"
-msgstr ""
+msgstr "Va keyingi buyurtmangizda vaqtingizni tejang!"
 
 #: .\templates\products\checkout.html:92
 msgid "Receive offers from our partners"
-msgstr ""
+msgstr "Hamkorlarimizdan takliflar oling"
 
 #: .\templates\products\checkout.html:182
 msgid "Free"
-msgstr ""
+msgstr "Bepul"
 
 #: .\templates\products\checkout.html:198
 msgid "Security policy"
-msgstr ""
+msgstr "Xavfsizlik siyosati"
 
 #: .\templates\products\checkout.html:204
 msgid "Delivery policy"
-msgstr ""
+msgstr "Yetkazib berish siyosati"
 
 #: .\templates\products\checkout.html:210
 msgid "Return policy"
-msgstr ""
+msgstr "Qaytarish siyosati"
 
 #: .\templates\products\product-detail.html:456
 msgid "Availability"
-msgstr ""
+msgstr "Mavjudlik"
 
 #: .\templates\products\product-detail.html:467
 msgid "Choose your size"
-msgstr ""
-
-#: .\templates\products\product-detail.html:488
-msgid "Quantity:"
-msgstr ""
+msgstr "O'lchamingizni tanlang"
 
 #: .\templates\products\product-detail.html:503
 msgid "Add to cart"
-msgstr ""
+msgstr "Savatga qo'shish"
 
 #: .\templates\products\product-detail.html:534
 msgid "REVIEW"
-msgstr ""
+msgstr "SHARH"
 
 #: .\templates\products\product-detail.html:548
 msgid "READ REVIEWS (3)"
-msgstr ""
+msgstr "SHARHLARNI O'QISH (3)"
 
 #: .\templates\products\product-detail.html:554
 msgid "WRITE A REVIEW"
-msgstr ""
+msgstr "SHARH YOZISH"
 
 #: .\templates\products\product-detail.html:670
 msgid "Write a review"
-msgstr ""
+msgstr "Sharh yozish"
 
 #: .\templates\products\products-list.html:191
 msgid "Catalog"
-msgstr ""
+msgstr "Katalog"
 
 #: .\templates\products\products-list.html:193
 msgid "categories"
-msgstr ""
+msgstr "kategoriyalar"
 
 #: .\templates\products\products-list.html:270
 msgid "Manufacture"
-msgstr ""
+msgstr "Ishlab chiqaruvchi"
 
 #: .\templates\products\wishlist.html:48
 msgid "New wishlist"
-msgstr ""
+msgstr "Yangi istaklar ro'yxati"
 
 #: .\templates\products\wishlist.html:61
 msgid "Name"
-msgstr ""
+msgstr "Ism"
 
 #: .\templates\products\wishlist.html:63
 msgid "Viewed"
-msgstr ""
+msgstr "Ko'rilgan"
 
 #: .\templates\products\wishlist.html:64
 msgid "Created"
-msgstr ""
+msgstr "Yaratilgan"
 
 #: .\templates\products\wishlist.html:65
 msgid "Direct Link"
-msgstr ""
+msgstr "To'g'ridan-to'g'ri havola"
 
 #: .\templates\products\wishlist.html:66
 msgid "Default"
-msgstr ""
+msgstr "Standart"
 
 #: .\templates\products\wishlist.html:67
 #: .\venv\Lib\site-packages\django\forms\formsets.py:499
 msgid "Delete"
-msgstr ""
+msgstr "O'chirish"
 
 #: .\templates\products\wishlist.html:73
 msgid "My wishlist"
-msgstr ""
+msgstr "Mening istaklarim"
 
 #: .\templates\products\wishlist.html:98
 msgid "Homepage"
-msgstr ""
+msgstr "Bosh sahifa"
 
 #: .\templates\shared\404.html:22
 msgid "We're sorry — something has gone wrong on our end."
-msgstr ""
+msgstr "Kechirasiz — bizning tomonimizda xatolik yuz berdi."
 
 #: .\templates\shared\404.html:24
 msgid ""
@@ -293,92 +308,88 @@ msgstr ""
 
 #: .\templates\shared\404.html:28
 msgid "Back to homepage"
-msgstr ""
+msgstr "Bosh sahifaga qaytish"
 
 #: .\templates\shared\about-us.html:28 .\templates\users\register.html:26
 msgid "About us"
-msgstr ""
+msgstr "Biz haqimizda"
 
 #: .\templates\shared\about-us.html:49
 msgid "WHO WE ARE"
-msgstr ""
+msgstr "BIZ KIMMIZ"
 
 #: .\templates\shared\about-us.html:65
 msgid "WHAT WE DO"
-msgstr ""
+msgstr "BIZ NIMA QILAMIZ"
 
 #: .\templates\shared\about-us.html:87
 msgid "MEET OUR TEAM"
-msgstr ""
+msgstr "JAMOAMIZ BILAN TANISHING"
 
 #: .\templates\shared\about-us.html:96
 msgid "No team members found."
-msgstr ""
-
-#: .\templates\shared\contact.html:28
-msgid "Contact"
-msgstr ""
+msgstr "Jamoa a'zolari topilmadi."
 
 #: .\templates\shared\contact.html:38
 msgid "Contact Us"
-msgstr ""
+msgstr "Biz bilan bog'laning"
 
 #: .\templates\shared\home.html:561
 msgid "FREE DELIVERY FROM $ 250"
-msgstr ""
+msgstr "$ 250 DAN BEPUL YETKAZIB BERISH"
 
 #: .\templates\users\account.html:42
 msgid "My Name"
-msgstr ""
+msgstr "Mening ismim"
 
 #: .\templates\users\account.html:46
 msgid "Company"
-msgstr ""
+msgstr "Kompaniya"
 
 #: .\templates\users\account.html:54
 msgid "City"
-msgstr ""
+msgstr "Shahar"
 
 #: .\templates\users\account.html:58
 msgid "Postal/Zip Code"
-msgstr ""
+msgstr "Pochta indeksi"
 
 #: .\templates\users\account.html:62
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: .\templates\users\account.html:66
 msgid "Country"
-msgstr ""
+msgstr "Mamlakat"
 
 #: .\templates\users\account.html:78
 msgid "History"
-msgstr ""
+msgstr "Tarix"
 
 #: .\templates\users\account.html:80
 msgid "You haven't placed any orders yet."
-msgstr ""
+msgstr "Siz hali hech qanday buyurtma bermagansiz."
 
 #: .\templates\users\login.html:26
 msgid "Login"
-msgstr ""
+msgstr "Kirish"
 
 #: .\templates\users\login.html:41
 msgid "Log In"
-msgstr ""
+msgstr "Tizimga kirish"
 
 #: .\templates\users\register.html:43 .\templates\users\register.html:77
 msgid "Create Account"
-msgstr ""
+msgstr "Hisob yaratish"
 
 #: .\templates\users\reset-password.html:26
 #: .\templates\users\reset-password.html:43
 msgid "User Reset Password"
-msgstr ""
+msgstr "Parolni tiklash"
 
 #: .\templates\users\reset-password.html:57
 msgid "Back to login"
-msgstr ""
+msgstr "Kirishga qaytish"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
