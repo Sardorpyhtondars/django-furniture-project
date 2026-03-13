@@ -10,17 +10,22 @@ def blogs_list_view(request):
         "tags": Tag.objects.all(),
         "recent_posts": Blog.objects.filter(status=BlogStatus.PUBLISHED).order_by('-created_at')[:3]
     }
-    return render(
-        request, 'blogs/blogs-list.html',
-        context
-    )
+    return render(request, 'blogs/blogs-list.html', context)
+
 
 def blog_detail_view(request, pk):
     try:
         blog = Blog.objects.get(id=pk)
     except Blog.DoesNotExist:
         return render(request, 'shared/404.html')
+
     context = {
-        "blog": blog
+        "categories": Category.objects.filter(parent=None),
+        "tags": Tag.objects.all(),
+        "recent_posts": Blog.objects.order_by('-created_at')[:2],
+        "blog": blog,
+        "related_news": Blog.objects.filter(
+            categories__in=blog.categories.values_list('id', flat=True)
+        ).exclude(id=blog.id).distinct()[:3]
     }
     return render(request, 'blogs/blog-detail.html', context)

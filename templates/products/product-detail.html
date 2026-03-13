@@ -347,49 +347,29 @@
                                     </div>
                                     <div class="col-sm-8 col-lg-9 col-md-9">
                                         <div class="main-product-detail">
-                                            <h2>Lorem ipsum dolor</h2>
+                                            <h2>{{ product.name }}</h2>
                                             <div class="product-single row">
                                                 <div class="product-detail col-xs-12 col-md-5 col-sm-5">
                                                     <div class="page-content" id="content">
                                                         <div class="images-container">
                                                             <div class="js-qv-mask mask tab-content border">
-                                                                <div id="item1" class="tab-pane fade active in show">
-                                                                    <img src="{% static 'img/product/1.jpg' %}" alt="img">
-                                                                </div>
-                                                                <div id="item2" class="tab-pane fade">
-                                                                    <img src="{% static 'img/product/2.jpg' %}" alt="img">
-                                                                </div>
-                                                                <div id="item3" class="tab-pane fade">
-                                                                    <img src="{% static 'img/product/3.jpg' %}" alt="img">
-                                                                </div>
-                                                                <div id="item4" class="tab-pane fade">
-                                                                    <img src="{% static 'img/product/5.jpg' %}" alt="img">
-                                                                </div>
+                                                                {% for image in product.images.all %}
+                                                                    <div id="item{{ forloop.counter }}" class="tab-pane fade {% if forloop.first %}active in show{% endif %}">
+                                                                        <img src="{{ image.image.url }}" alt="img">
+                                                                    </div>
+                                                                {% endfor %}
                                                                 <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
                                                                     <i class="fa fa-expand"></i>
                                                                 </div>
                                                             </div>
                                                             <ul class="product-tab nav nav-tabs d-flex">
-                                                                <li class="active col">
-                                                                    <a href="#item1" data-toggle="tab" aria-expanded="true" class="active show">
-                                                                        <img src="{% static 'img/product/1.jpg' %}" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item2" data-toggle="tab">
-                                                                        <img src="{% static 'img/product/2.jpg' %}" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item3" data-toggle="tab">
-                                                                        <img src="{% static 'img/product/3.jpg' %}" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item4" data-toggle="tab">
-                                                                        <img src="{% static 'img/product/5.jpg' %}" alt="img">
-                                                                    </a>
-                                                                </li>
+                                                                {% for image in product.images.all %}
+                                                                    <li class="{% if forloop.first %}active{% endif %} col">
+                                                                        <a href="#item{{ forloop.counter }}" data-toggle="tab" {% if forloop.first %}class="active show"{% endif %}>
+                                                                            <img src="{{ image.image.url }}" alt="img">
+                                                                        </a>
+                                                                    </li>
+                                                                {% endfor %}
                                                             </ul>
                                                             <div class="modal fade" id="product-modal" role="dialog">
                                                                 <div class="modal-dialog">
@@ -451,15 +431,19 @@
                                                 <div class="product-info col-xs-12 col-md-7 col-sm-7">
                                                     <div class="detail-description">
                                                         <div class="price-del">
-                                                            <span class="price">£150.00</span>
+                                                            {% if product.has_discount %}
+                                                                <span style="text-decoration: line-through;" class="price">${{ product.price_usd }}</span>
+                                                                <span class="price">${{ product.discount_price_usd }}</span>
+                                                            {% else %}
+                                                                <span class="price">${{ product.price_usd }}</span>
+                                                            {% endif %}
                                                             <span class="float-right">
-                                                                <span class="availb">{% trans 'Availability' %}: </span>
+                                                                <span class="availb">Availability: </span>
                                                                 <span class="check">
-                                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>IN STOCK</span>
+                                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>{{ product.status }}</span>
                                                             </span>
                                                         </div>
-                                                        <p class="description">Proin gravida nibh vel velit auctor aliquet. Aenean lorem quis bibendum
-                                                            auctor, nisi elit consequat etiam non auctor.</p>
+                                                        <p class="description">{{ product.short_description }}</p>
                                                         <div class="option has-border d-lg-flex size-color">
                                                             <div class="size">
                                                                 <span class="size">{% trans 'Size' %}: </span>
@@ -556,25 +540,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="content">
-                                                            <p>SKU :
-                                                                <span class="content2">
-                                                                    <a href="#">e-02154</a>
-                                                                </span>
-                                                            </p>
+                                                            <p>SKU : <span class="content2"><a href="#">{{ product.sku }}</a></span></p>
                                                             <p>Categories :
                                                                 <span class="content2">
-                                                                    <a href="#">Clothing</a>,
-                                                                    <a href="#">Men's Jackets</a>
+                                                                    {% for cat in product.categories.all %}
+                                                                        <a href="#">{{ cat.name }}</a>{% if not forloop.last %}, {% endif %}
+                                                                    {% endfor %}
                                                                 </span>
                                                             </p>
-                                                            <p>tags :
+                                                            <p>Tags :
                                                                 <span class="content2">
-                                                                    <a href="#">Jacket</a>,
-                                                                    <a href="#">Overcoat</a>,
-                                                                    <a href="#">Luxury</a>,
-                                                                    <a href="#">men</a>,
-                                                                    <a href="#">summer</a>,
-                                                                    <a href="#">autumn</a>
+                                                                    {% for tag in product.tags.all %}
+                                                                        <a href="#">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+                                                                    {% endfor %}
                                                                 </span>
                                                             </p>
                                                         </div>
@@ -597,16 +575,7 @@
 
                                                 <div class="tab-content">
                                                     <div id="description" class="tab-pane fade in active show">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                                                            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                            tempor incididunt ut labore et dolore magna aliqua.
-                                                        </p>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                                                            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                            tempor incididunt ut labore et dolore magna aliqua.
-                                                        </p>
+                                                        <p>{{ product.description }}</p>
                                                     </div>
 
                                                     <div id="review" class="tab-pane fade">

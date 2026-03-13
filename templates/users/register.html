@@ -7,11 +7,8 @@
 {% block class %}class="user-register blog"{% endblock %}
 
 {% block content %}
-    <!-- main content -->
     <div class="main-content">
         <div class="wrap-banner">
-
-            <!-- breadcrumb -->
             <nav class="breadcrumb-bg">
                 <div class="container no-index">
                     <div class="breadcrumb">
@@ -23,7 +20,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span>{% trans 'About us' %}</span>
+                                    <span>{% trans 'Register' %}</span>
                                 </a>
                             </li>
                         </ol>
@@ -32,7 +29,6 @@
             </nav>
         </div>
 
-        <!-- main -->
         <div id="wrapper-site">
             <div class="container">
                 <div class="row">
@@ -41,42 +37,43 @@
                             <div id="content" class="page-content">
                                 <div class="register-form text-center">
                                     <h1 class="text-center title-page">{% trans 'Create Account' %}</h1>
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-{{ message.tags }} text-center">{{ message }}</div>
+                                        {% endfor %}
+                                    {% endif %}
                                     <form action="{% url 'users:register' %}" id="customer-form" class="js-customer-form" method="post">
                                         {% csrf_token %}
                                         <div>
                                             <div class="form-group">
-                                            </div>
-                                            <div class="form-group">
                                                 <div>
-                                                    <input class="form-control" name="full_name" type="text" placeholder="Full name">
+                                                    <input class="form-control" name="full_name" type="text" placeholder="{% trans 'Full name' %}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div>
-                                                    <input class="form-control" name="username" type="text" placeholder="Username">
+                                                    <input class="form-control" name="username" type="text" placeholder="{% trans 'Username' %}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div>
-                                                    <input class="form-control" name="email" type="email" placeholder="Email">
+                                                    <input class="form-control" name="email" type="email" placeholder="{% trans 'Email' %}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div>
-                                                    <input class="form-control" name="password1" type="password" placeholder="Password">
+                                                    <input class="form-control" name="password1" type="password" placeholder="{% trans 'Password' %}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div>
-                                                    <input class="form-control" name="password2" type="password" placeholder="Confirm Password">
+                                                    <input class="form-control" name="password2" type="password" placeholder="{% trans 'Confirm Password' %}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="clearfix">
                                             <div>
                                                 <button class="btn btn-primary" type="submit">{% trans 'Create Account' %}</button>
-                                                    Create Account
-                                                </button>
                                             </div>
                                         </div>
                                     </form>
