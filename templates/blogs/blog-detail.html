@@ -1,28 +1,24 @@
 {% extends 'layout/base.html' %}
-{% load i18n %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}{% trans 'Blog detail' %}{% endblock %}
-
-{% block id %}id="blog-detail"{% endblock %}
+{% block title %}{{ blog.title }}{% endblock %}
 {% block class %}class="blog"{% endblock %}
+{% block id %}id="blog-detail"{% endblock %}
 
 {% block content %}
-    <!-- main content -->
     <div class="main-content">
         <div id="wrapper-site">
             <div id="content-wrapper">
                 <div id="main">
-                    <span>{% trans 'Home' %}</span>
-
-                        <!-- breadcrumb -->
+                    <div class="page-home">
                         <nav class="breadcrumb-bg">
                             <div class="container no-index">
                                 <div class="breadcrumb">
                                     <ol>
                                         <li>
-                                            <a href="{%  url  'shared:home' %}">
-                                                <span>Home</span>
+                                            <a href="{% url 'shared:home' %}">
+                                                <span>{% trans 'Home' %}</span>
                                             </a>
                                         </li>
                                     </ol>
@@ -32,91 +28,18 @@
                         <div class="container">
                             <div class="content">
                                 <div class="row">
-                                    <div class="sidebar-3 sidebar-collection col-lg-3 col-md-3 col-sm-4">
-
-                                        <!-- category -->
-                                        <div class="sidebar-block">
-                                            <div class="title-block">{% trans 'Categories' %}</div>
-                                        <div class="block-content">
-                                            {% for category in categories %}
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapse-icons collapsed" data-toggle="collapse"
-                                                          data-target="#category-{{ category.id }}" aria-expanded="false" role="status">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">{{ category.title }}</a>
-                                                    <div class="subCategory collapse" id="category-{{ category.id }}" aria-expanded="true" role="status">
-                                                        {% for sub_cat in category.children.all %}
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">{{ sub_cat.title }}</a>
-                                                            </div>
-                                                        {% endfor %}
-                                                    </div>
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                        </div>
-
-
-                                        <!-- recent posts -->
-                                        <div class="sidebar-block">
-                                            <div class="title-block">{% trans 'Recent Posts' %}</div>
-                                        <div class="post-item-content">
-                                            {% for post in recent_posts %}
-                                                <div>
-                                                    <div class="late-item first-child">
-                                                        <a href="{% url 'blogs:detail' pk=post.id %}">
-                                                            <p class="content-title">{{ post.title }}</p>
-                                                        </a>
-                                                        <span><i class="zmdi zmdi-comments"></i>13 comment</span>
-                                                        <span><i class="zmdi zmdi-calendar-note"></i>{{ post.created_at|date:"d F Y" }}</span>
-                                                        <p class="description">{{ post.short_description|truncatechars:100 }}</p>
-                                                        <p class="remove">
-                                                            <a href="{% url 'blogs:detail' pk=post.id %}">READ MORE</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                        </div>
-
-                                        <!-- product tag -->
-                                        <div class="sidebar-block product-tags">
-                                            <div class="title-block">Blog Tags</div>
-                                            <div class="block-content">
-                                                <ul class="listSidebarBlog list-unstyled">
-                                                    {% for tag in tags %}
-                                                        <li>
-                                                            <a href="#" title="Show blogs matching tag {{ tag.title }}">{{ tag.title }}</a>
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!-- advertising -->
-                                        <div class="sidebar-block group-image-special">
-                                            <div class="effect">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="{% static 'img/blog/advertising.jpg' %}" alt="banner-2" title="banner-2">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% include 'blogs/blog-filter.html' %}
                                     <div class="col-sm-8 col-lg-9 col-md-9 flex-xs-first main-blogs">
                                         <h3>{{ blog.title }}</h3>
                                         <div class="hover-after">
                                             <img src="{{ blog.image.url }}" alt="img" class="img-fluid">
                                         </div>
                                         <div class="late-item">
-                                            <p>
-                                                {{ blog.long_description }}
-                                            </p>
+                                            <p>{{ blog.long_description }}</p>
                                             <div class="border-detail">
                                                 <p class="post-info float-left">
-                                                    <span>{{ blog.created_at|timesince }} minutes ago</span>
-                                                    <span>113 Comments</span>
+                                                    <span>{{ blog.created_at|timesince }} {% trans 'minutes ago' %}</span>
+                                                    <span>113 {% trans 'Comments' %}</span>
                                                     {% for author in blog.authors.all %}
                                                         <span>{{ author.full_name }},</span>
                                                     {% endfor %}
@@ -138,39 +61,34 @@
                                             </div>
                                         </div>
                                         {% for author in blog.authors.all %}
-                                            <div class="admin">
-                                            <img src="{{ author.image.url }}" alt="img" class="float-left right">
-                                            <div class="info">
-                                                <p>
-                                                    <a href="#">
-                                                        <span class="content-title">
-                                                            {{ author.full_name }}
-                                                        </span>
-                                                    </a>
-                                                    <span>{{ author.professions }}</span>
-                                                </p>
-                                                <p class="descript">
-                                                    {{ author.about }}
-                                                </p>
+                                            <div class="admin" style="margin-left: 100px">
+                                                <img src="{{ author.image.url }}" alt="img" class="float-left right">
+                                                <div class="info">
+                                                    <p>
+                                                        <a href="#">
+                                                            <span class="content-title">{{ author.full_name }}</span>
+                                                        </a>
+                                                        <span>{{ author.professions }}</span>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
                                         {% endfor %}
                                         <div class="related">
                                             <h2 class="title-block">{% trans 'Related News' %}</h2>
                                             <div class="main-blogs">
                                                 <div class="row">
-                                                    {% for related in related_news %}
+                                                    {% for news in related_news %}
                                                         <div class="col-md-4">
                                                             <div class="hover-after">
-                                                                <a href="{% url 'blogs:detail' pk=related.id %}">
-                                                                    <img src="{{ related.image.url }}" alt="img" class="img-fluid">
+                                                                <a href="{% url 'blogs:detail' pk=news.id %}">
+                                                                    <img src="{{ news.image.url }}" alt="img" class="img-fluid">
                                                                 </a>
                                                             </div>
                                                             <div class="late-item">
                                                                 <p class="content-title">
-                                                                    <a href="{% url 'blogs:detail' pk=related.id %}">{{ related.title }}</a>
+                                                                    <a href="{% url 'blogs:detail' pk=news.id %}">{{ news.title }}</a>
                                                                 </p>
-                                                                <p class="description">{{ related.short_description }}</p>
+                                                                <p class="description">{{ news.short_description|truncatechars:50 }}</p>
                                                             </div>
                                                         </div>
                                                     {% endfor %}
@@ -178,44 +96,7 @@
                                             </div>
                                         </div>
                                         <div class="reply late-item">
-                                            <div class="blog-comment" id="blog-comment">
-                                                <h2 class="title-block">{% trans 'Comments' %}</h2>
-                                                <img src="{% static 'img/blog/user1.jpg' %}" alt="img" class="float-left right">
-                                            </div>
-                                            <div class="comment-content">
-                                                <p class="user-title">
-                                                    <a href="#">JOHN DOE</a>
-                                                    <span class="time">Posted on Mar 17, 2017 at 6:57am /
-                                                        <a href="#">repost</a> /
-                                                        <span class="green">
-                                                            <a href="#">Reply</a>
-                                                        </span>
-                                                    </span>
-                                                </p>
-                                                <p class="content-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor
-                                                    incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam.
-                                                </p>
-                                            </div>
-                                            <div class="blog-comment margin-right-comment">
-                                                <div class="avatar">
-                                                    <img src="{% static 'img/blog/user2.jpg' %}" alt="img" class="float-left">
-                                                </div>
-                                                <div class="comment-content">
-                                                    <p class="user-title">
-                                                        <a href="#">JOHN DOE</a>
-                                                        <span class="time">Posted on Mar 17, 2017 at 6:57am /
-                                                            <a href="#">repost</a> /
-                                                            <span class="green">
-                                                                <a href="#">Reply</a>
-                                                            </span>
-                                                        </span>
-                                                    </p>
-                                                    <p class="content-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod
-                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim
-                                                        veniam.
-                                                    </p>
-                                                </div>
-                                            </div>
+                                            <h2>{% trans 'Comments' %}</h2>
                                             <div class="blog-comment">
                                                 <div class="avatar">
                                                     <img src="{% static 'img/blog/user1.jpg' %}" alt="img" class="float-left right">
@@ -223,16 +104,11 @@
                                                 <div class="comment-content">
                                                     <p class="user-title">
                                                         <a href="#">JOHN DOE</a>
-                                                        <span class="time">Posted on Mar 17, 2017 at 6:57am /
-                                                            <a href="#">repost</a> /
-                                                            <span class="green">
-                                                                <a href="#">Reply</a>
-                                                            </span>
-                                                        </span>
+                                                        <span class="time">{% trans 'Posted on' %} Mar 17, 2017 at 6:57am</span>
                                                     </p>
-                                                    <p class="content-comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod
-                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim
-                                                        veniam.
+                                                    <p class="content-comment">Lorem ipsum dolor sit amet, consectetur
+                                                        adipisicing elit, do eiusmod tempor incididunt ut labore et
+                                                        dolore magna aliqua. Ut enim adminim veniam.
                                                     </p>
                                                 </div>
                                             </div>
@@ -243,23 +119,16 @@
                                                 <form action="#" method="post" id="commentform">
                                                     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                                     <div class="row">
-                                                        <div class="form-group col col-sm-12 col-md-4 ">
-                                                            <input type="text" class="inputName form-control" name="name" placeholder="Your Name *">
-                                                        </div>
-                                                        <div class="form-group col col-sm-12  col-md-4">
-                                                            <input type="text" class="inputMail form-control" name="mail" placeholder="Your E-mail *">
-                                                        </div>
-                                                        <div class="form-group col col-sm-12  col-md-4">
-                                                            <input type="text" class="form-control" name="website" placeholder="Your Website">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="form-group col col-md-12">
-                                                            <textarea tabindex="4" class="inputContent form-control grey" rows="10" name="comment" placeholder="Your Message"></textarea>
+                                                            <textarea tabindex="4" class="inputContent form-control grey"
+                                                                      rows="10" name="comment"
+                                                                      placeholder="Your Message"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="submit">
-                                                        <input type="submit" name="addComment" id="submitComment" class="btn btn-default" value="Send Message">
+                                                        <input type="submit" name="addComment" id="submitComment"
+                                                               class="btn btn-default"
+                                                               value="{% trans 'Write your comment' %}">
                                                     </div>
                                                 </form>
                                             </div>
@@ -273,4 +142,26 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        function addUrlParameter(name, value) {
+            let searchParams = new URLSearchParams(window.location.search)
+            let existing = searchParams.get(name)
+            let values = existing ? existing.split(',') : []
+            const index = values.indexOf(String(value))
+            if (index !== -1) {
+                values.splice(index, 1)
+            } else {
+                values.push(String(value))
+            }
+            if (values.length === 0) {
+                searchParams.delete(name)
+            } else {
+                searchParams.set(name, values.join(','))
+            }
+            window.location.search = searchParams.toString()
+        }
+    </script>
 {% endblock %}

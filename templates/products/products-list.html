@@ -1860,4 +1860,25 @@
         </div>
     </div>
 </div>
+{% block extra_js %}
+    <script>
+        function addUrlParameter(name, value) {
+            let searchParams = new URLSearchParams(window.location.search)
+            let existing = searchParams.get(name)
+            let values = existing ? existing.split(',') : []
+            const index = values.indexOf(String(value))
+            if (index !== -1) {
+                values.splice(index, 1)
+            } else {
+                values.push(String(value))
+            }
+            if (values.length === 0) {
+                searchParams.delete(name)
+            } else {
+                searchParams.set(name, values.join(','))
+            }
+            window.location.search = searchParams.toString()
+        }
+    </script>
+{% endblock %}0
 {% endblock %}
