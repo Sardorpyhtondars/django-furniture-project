@@ -28,7 +28,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['sardor.ezma.uz', 'www.sardor.ezma.uz']
 
-
+CSRF_TRUSTED_ORIGINS = ['https://sardor.ezma.uz', 'https://www.sardor.ezma.uz']
 # Application definition
 
 INSTALLED_APPS = [
