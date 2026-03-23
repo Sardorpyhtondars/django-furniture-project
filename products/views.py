@@ -1,44 +1,45 @@
+from django.db.models import Q
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 
-from products.models import Product, ProductCategory, ProductTag, ProductColor, Manufacture, ProductStatus
+from products.models import Product, ProductCategory, ProductTag, ProductColor, Manufacture
 
 
 class ProductListView(ListView):
     model = Product
     template_name = 'products/products-list.html'
     context_object_name = 'products'
-    paginate_by = 9
 
     def get_queryset(self):
-        products = Product.objects.filter(is_active=True).order_by('-id')
+        queryset = Product.objects.filter(is_active=True)
 
-        categories = self.request.GET.getlist('cat')
-        tags = self.request.GET.getlist('tag')
         manufacture = self.request.GET.get('manufacture')
+        tag = self.request.GET.get('tag')
+        color = self.request.GET.get('color')
+        q = self.request.GET.get('q')
+        ordering = self.request.GET.get('ordering')
+        if q:
+            queryset = queryset.filter(Q(name__icontains=q) | Q(short_description__icontains=q))
 
-        categories_id_list = []
-        tags_id_list = []
-
-        if categories:
-            categories_id_list = list(map(int, categories[0].split(',')))
-        if tags:
-            tags_id_list = list(map(int, tags[0].split(',')))
-
-        if categories_id_list:
-            products = products.filter(categories__id__in=categories_id_list)
-        if tags_id_list:
-            products = products.filter(tags__id__in=tags_id_list)
         if manufacture:
-            products = products.filter(manufacture__id=int(manufacture))
+            queryset = queryset.filter(manufacture__id=int(manufacture))
+        if tag:
+            queryset = queryset.filter(tags__id=int(tag))
+        if color:
+            queryset = queryset.filter(colors__id=int(color))
 
-        return products.distinct()
+        if ordering in ['name', '-name', 'price_uzs', '-price_uzs']:
+            queryset = queryset.order_by(ordering)
+
+        return queryset.distinct()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["categories"] = ProductCategory.objects.filter(is_active=True)
-        context["tags"] = ProductTag.objects.all()
-        context["colors"] = ProductColor.objects.all()
-        context["manufactures"] = Manufacture.objects.filter(is_active=True)
+        context['categories'] = ProductCategory.objects.filter(is_active=True)
+        context['tags'] = ProductTag.objects.all()
+        context['colors'] = ProductColor.objects.all()
+        context['manufactures'] = Manufacture.objects.filter(is_active=True)
         return context
 
 
@@ -47,9 +48,28 @@ class ProductDetailView(DetailView):
     template_name = 'products/product-detail.html'
     context_object_name = 'product'
 
-    def get_object(self):
-        obj = super().get_object()
-        if not obj.is_active:
-            from django.http import Http404
-            raise Http404
-        return obj
+    def get_queryset(self):
+        return Product.objects.filter(is_active=True)
+
+
+def add_or_remove_from_cart(request, pk):
+    cart = request.session.get('cart', [])
+    if pk in cart:
+        cart.remove(pk)
+    else:
+        cart.append(pk)
+
+    request.session['cart'] = cart
+    next_url = request.GET.get('next', reverse_lazy('products:list'))
+    return redirect(next_url)
+
+def add_or_remove_from_wishlist(request, pk):
+    wishlist = request.session.get('wishlist', [])
+    if pk in wishlist:
+        wishlist.remove(pk)
+    else:
+        wishlist.append(pk)
+
+    request.session['wishlist'] = wishlist
+    next_url = request.GET.get('next', reverse_lazy('products:list'))
+    return redirect(next_url)

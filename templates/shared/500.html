@@ -1,0 +1,9 @@
+{% extends 'layout/base.html' %}
+{% block title %}500 Server Error{% endblock %}
+{% block content %}
+<div class="container text-center" style="padding: 100px 0;">
+    <h1>500</h1>
+    <p>Something went wrong on our end. Please try again later.</p>
+    <a href="{% url 'shared:home' %}" class="btn btn-primary">Go Home</a>
+</div>
+{% endblock %}

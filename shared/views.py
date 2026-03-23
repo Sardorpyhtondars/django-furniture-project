@@ -1,60 +1,42 @@
 from django.contrib import messages
-from django.shortcuts import render
-from about.models import TeamMember
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+from django.views.generic import TemplateView, FormView
+
 from shared.forms import ContactForm
+from shared.models import Team
 
 
-def home_page_view(request):
-    return render(request, 'shared/home.html')
+class HomeTemplateView(TemplateView):
+    template_name = 'shared/home.html'
 
-def about_us_view(request):
-    context = {
-        'team_members': TeamMember.objects.all(),
-    }
-    return render(request, 'shared/about-us.html', context)
 
-def blog_detail_view(request):
-    return render(request, 'shared/blog-detail.html')
+class ContactFormView(FormView):
+    template_name = 'shared/contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('shared:contact')
 
-def blogs_list_view(request):
-    return render(request, 'shared/blogs-list.html')
+    def form_valid(self, form):
+        form.save()
+        text = _("Successfully sent to the admin, thanks for your attention.")
+        messages.success(self.request, text)
+        return super().form_valid(form)
 
-def cart_view(request):
-    return render(request, 'shared/cart.html')
+    def form_invalid(self, form):
+        errors = []
+        for field, field_errors in form.errors.items():
+            for error in field_errors:
+                errors.append(f"{field}: {error}")
 
-def checkout_view(request):
-    return render(request, 'shared/checkout.html')
+        error_text = " | ".join(errors)
+        messages.error(self.request, error_text)
+        return super().form_invalid(form)
 
-def contact_view(request):
-    if request.method == "GET":
-        return render(request, 'shared/contact.html')
-    else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            text = 'Successfully sent to the admin, thank you for your attention!'
-            messages.success(request, text)
-        else:
-            errors = []
-            for field, field_errors in form.errors.items():
-                for error in field_errors:
-                    errors.append(f'{field}: {error}')
 
-            error_text = ' | '.join(errors)
-            messages.error(request, error_text)
-        return render(request, 'shared/contact.html')
+class AboutTemplateView(TemplateView):
+    template_name = 'shared/about-us.html'
 
-def product_detail_view(request):
-    return render(request, 'shared/product-detail.html')
-
-def products_list_view(request):
-    return render(request, 'shared/products-list.html')
-
-def reset_password_view(request):
-    return render(request, 'shared/reset-password.html')
-
-def wishlist_view(request):
-    return render(request, 'shared/wishlist.html')
-
-def page_404_view(request, exception):
-    return render(request, 'shared/404.html', status=404)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["members"] = Team.objects.filter(is_active=True).order_by("-created_at")
+        return context

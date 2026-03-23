@@ -2,8 +2,20 @@ from django import template
 
 register = template.Library()
 
+
 @register.simple_tag
 def get_full_path(path, code):
     split_path = path.split('/')
     split_path[1] = code
     return '/'.join(split_path)
+
+
+@register.filter
+def in_cart(product, request):
+    cart = request.session.get('cart', [])
+    return product.id in [int(i) for i in cart]
+
+@register.filter
+def in_wishlist(product, request):
+    wishlist = request.session.get('wishlist', [])
+    return product.id in [int(i) for i in wishlist]

@@ -120,6 +120,7 @@ class ProductStatus(models.TextChoices):
 
 
 class Product(BaseModel):
+    # Basic info
     name = models.CharField(
         max_length=255,
         verbose_name=_("Name")
@@ -142,6 +143,8 @@ class Product(BaseModel):
         upload_to="product_images/",
         verbose_name=_("Main Image")
     )
+
+    # Prices in 3 currencies (manually entered)
     price_uzs = models.DecimalField(
         max_digits=15,
         decimal_places=2,
@@ -163,33 +166,42 @@ class Product(BaseModel):
         verbose_name=_("Price (RUB)"),
         help_text=_("Price in Russian Ruble")
     )
+
+    # Discount prices (optional, for sales)
     discount_price_uzs = models.DecimalField(
         max_digits=15,
         decimal_places=2,
         validators=[MinValueValidator(0)],
-        null=True, blank=True,
+        null=True,
+        blank=True,
         verbose_name=_("Discount Price (UZS)")
     )
     discount_price_usd = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         validators=[MinValueValidator(0)],
-        null=True, blank=True,
+        null=True,
+        blank=True,
         verbose_name=_("Discount Price (USD)")
     )
     discount_price_rub = models.DecimalField(
         max_digits=12,
         decimal_places=2,
         validators=[MinValueValidator(0)],
-        null=True, blank=True,
+        null=True,
+        blank=True,
         verbose_name=_("Discount Price (RUB)")
     )
+
+    # Status
     status = models.CharField(
         max_length=20,
         choices=ProductStatus.choices,
         default=ProductStatus.AVAILABLE,
         verbose_name=_("Status")
     )
+
+    # Relations
     manufacture = models.ForeignKey(
         Manufacture,
         on_delete=models.PROTECT,
@@ -232,6 +244,7 @@ class Product(BaseModel):
 
     @property
     def total_stock(self):
+        """Total stock across all colors."""
         return self.color_quantities.aggregate(
             total=models.Sum('quantity')
         )['total'] or 0

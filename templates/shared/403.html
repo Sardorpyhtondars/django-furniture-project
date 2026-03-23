@@ -1,0 +1,9 @@
+{% extends 'layout/base.html' %}
+{% block title %}403 Forbidden{% endblock %}
+{% block content %}
+<div class="container text-center" style="padding: 100px 0;">
+    <h1>403</h1>
+    <p>You don't have permission to access this page.</p>
+    <a href="{% url 'shared:home' %}" class="btn btn-primary">Go Home</a>
+</div>
+{% endblock %}

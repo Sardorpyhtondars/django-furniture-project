@@ -1,18 +1,11 @@
 from django.urls import path
-from shared import views
+
+from shared.views import HomeTemplateView, AboutTemplateView, ContactFormView
 
 app_name = 'shared'
 
 urlpatterns = [
-    path('', views.home_page_view, name='home'),
-    path('about/', views.about_us_view, name='about'),
-    path('blog/<int:id>/', views.blog_detail_view, name='blog-detail'),
-    path('blogs/', views.blogs_list_view, name='list'),
-    path('cart/', views.cart_view, name='cart'),
-    path('checkout/', views.checkout_view, name='checkout'),
-    path('contact/', views.contact_view, name='contact'),
-    path('product/<int:id>/', views.product_detail_view, name='product-detail'),
-    path('products/', views.products_list_view, name='list'),
-    path('reset-password/', views.reset_password_view, name='reset-password'),
-    path('wishlist/', views.wishlist_view, name='wishlist'),
+    path('', HomeTemplateView.as_view(), name='home'),
+    path('about/', AboutTemplateView.as_view(), name='about'),
+    path('contact/', ContactFormView.as_view(), name='contact'),
 ]
