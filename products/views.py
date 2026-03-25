@@ -73,3 +73,11 @@ def add_or_remove_from_wishlist(request, pk):
     request.session['wishlist'] = wishlist
     next_url = request.GET.get('next', reverse_lazy('products:list'))
     return redirect(next_url)
+
+class WishlistView(ListView):
+    template_name = 'products/wishlist.html'
+    context_object_name = 'wishlist_products'
+
+    def get_queryset(self):
+        wishlist = self.request.session.get('wishlist', [])
+        return Product.objects.filter(id__in=wishlist, is_active=True)

@@ -1,103 +1,101 @@
 {% extends 'layout/base.html' %}
 {% load i18n %}
+{% load my_tags %}
 {% load static %}
 
-{% block title %}Products wishlist{% endblock %}
+{% block title %}{% trans 'My Wishlist' %}{% endblock %}
 
 {% block id %}id="product-sidebar-left"{% endblock %}
 {% block class %}class="user-wishlist blog"{% endblock %}
 
 {% block content %}
-    <!-- main content -->
     <div class="main-content">
         <div class="wrap-banner">
-
-            <!-- breadcrumb -->
             <nav class="breadcrumb-bg">
                 <div class="container no-index">
                     <div class="breadcrumb">
                         <ol>
                             <li>
-                                <a href="#">
+                                <a href="{% url 'shared:home' %}">
                                     <span>{% trans 'Home' %}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <span>Wishlists</span>
+                                    <span>{% trans 'My Wishlist' %}</span>
                                 </a>
                             </li>
                         </ol>
                     </div>
                 </div>
             </nav>
-
         </div>
 
-        <!-- main -->
         <div id="wrapper-site">
             <div class="container">
                 <div class="row">
                     <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
                         <div id="main">
                             <div id="content" class="page-content">
-                                <div id="mywishlist">
-                                    <h1 class="title-page">My Wishlists</h1>
-                                    <form method="post" class="std" id="customer-form">
-                                        <fieldset>
-                                            <h3>{% trans 'New wishlist' %}</h3>
-                                            <div class="input-group">
-                                                <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
-                                                <button class="btn" type="submit" data-action="show-password" data-text-show="Show" data-text-hide="Hide">
-                                                    Save
-                                                </button>
+                                <h1 class="title-page">{% trans 'My Wishlist' %}</h1>
+
+                                {% if wishlist_products %}
+                                    <div class="row">
+                                        {% for product in wishlist_products %}
+                                            <div class="item text-center col-md-3">
+                                                <div class="product-miniature js-product-miniature item-one first-item">
+                                                    <div class="thumbnail-container border">
+                                                        <a href="{% url 'products:detail' pk=product.id %}">
+                                                            {% for image in product.images.all %}
+                                                                <img class="img-fluid {% if forloop.first %}image-cover{% else %}image-secondary{% endif %}"
+                                                                     src="{{ image.image.url }}" alt="img">
+                                                            {% endfor %}
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-description">
+                                                        <div class="product-groups">
+                                                            <div class="product-title">
+                                                                <a href="{% url 'products:detail' pk=product.id %}">
+                                                                    {{ product.name }}
+                                                                </a>
+                                                            </div>
+                                                            <div class="product-group-price">
+                                                                <div class="product-price-and-shipping">
+                                                                    {% if product.has_discount %}
+                                                                        <span style="text-decoration: line-through;" class="price">${{ product.price_usd }}</span>
+                                                                        <span class="price">${{ product.discount_price_usd }}</span>
+                                                                    {% else %}
+                                                                        <span class="price">${{ product.price_usd }}</span>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-buttons d-flex justify-content-center">
+                                                            <a class="add-to-cart"
+                                                               href="{% url 'products:cart' pk=product.id %}?next={{ request.get_full_path|urlencode }}"
+                                                               data-button-action="add-to-cart">
+                                                                <i {% if product|in_cart:request %}style="color: red;"{% endif %}
+                                                                   class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a class="addToWishlist"
+                                                               href="{% url 'products:wishlist' pk=product.id %}?next={{ request.get_full_path|urlencode }}">
+                                                                <i style="color: red;" class="fa fa-heart" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </fieldset>
-                                    </form>
-                                    <div id="block-history" class="block-center">
-                                        <table class="std table">
-                                            <thead>
-                                                <tr>
-                                                    <th class="first_item">{% trans 'Name' %}</th>
-                                                    <th class="item mywishlist_first">{% trans 'Quantity' %}</th>
-                                                    <th class="item mywishlist_first">{% trans 'Viewed' %}</th>
-                                                    <th class="item mywishlist_second">{% trans 'Created' %}</th>
-                                                    <th class="item mywishlist_second">{% trans 'Direct Link' %}</th>
-                                                    <th class="item mywishlist_second">{% trans 'Default' %}</th>
-                                                    <th class="last_item mywishlist_first">{% trans 'Delete' %}</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr id="wishlist_1">
-                                                    <td>
-                                                        <a href="javascript:;" onclick="javascript:WishlistManage('block-order-detail', '1');">{% trans 'My wishlist' %}</a>
-                                                    </td>
-                                                    <td class="bold align_center">
-                                                        3
-                                                    </td>
-                                                    <td>0</td>
-                                                    <td>2018-06-14</td>
-                                                    <td>
-                                                        <a href="javascript:;" onclick="javascript:WishlistManage('block-order-detail', '1');">View</a>
-                                                    </td>
-                                                    <td class="wishlist_default">
-                                                        <p class="is_wish_list_default">
-                                                            <i class="icon icon-check-square"></i>
-                                                        </p>
-                                                    </td>
-                                                    <td class="wishlist_delete">
-                                                        <a href="javascript:;" onclick="return (WishlistDelete('wishlist_1', '1', 'Do you really want to delete this wishlist ?'));">Delete</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        {% endfor %}
                                     </div>
-                                    <div class="page-home">
-                                        <a class="btn btn-default" href="../shared/home.html">
-                                            <i class="fa fa-home" aria-hidden="true"></i>
-                                            <span>{% trans 'Homepage' %}</span>
-                                        </a>
-                                    </div>
+                                {% else %}
+                                    <p>{% trans 'Your wishlist is empty.' %}</p>
+                                {% endif %}
+
+                                <div class="page-home" style="margin-top: 20px;">
+                                    <a class="btn btn-default" href="{% url 'shared:home' %}">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>{% trans 'Homepage' %}</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
